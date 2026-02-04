@@ -41,8 +41,8 @@ border-top: 2px solid var(--wii_button_border_color); <br>
 border-left: 2px solid var(--wii_button_border_color); <br>
 border-right: 2px solid var(--wii_button_border_color); <br>
 
-Werd veranderd naar het volgende:
-border: 2px solid var(--wii_button_border_color);
+Werd veranderd naar het volgende: <br>
+border: 2px solid var(--wii_button_border_color); <br>
 border-bottom: none;
 
 ### Donderdag 5 februari
