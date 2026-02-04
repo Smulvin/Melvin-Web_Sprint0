@@ -24,6 +24,27 @@ Vandaag was ik wat eerder op school dus was ik alvast begonnen met wat dingen ma
 
 Morgen wil ik dan dus gaan werken aan de laatste puntjes op de i voor de wii controller, wil ik de functionaliteiten van de buttons toevoegen en wil ik animaties maken voor de stukken tekst waar de leerdoelen instaan.
 
+#### Bekeken websites van vandaag:
+https://www.w3schools.com/cssref/css_pr_aspect-ratio.php
+https://www.w3schools.com/cssref/css3_pr_justify-content.php
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/drop-shadow
+https://stackoverflow.com/questions/47601564/equal-width-columns-in-css-grid
+https://www.w3schools.com/css/css_align.asp
+https://developer.mozilla.org/en-US/docs/Web/API/Window/close
+https://www.w3schools.com/css/css_grid_container.asp
+https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my-hr-tag
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not
+
+#### AI:
+Gevraagd of hij de volgende regels korter kon maken:
+border-top: 2px solid var(--wii_button_border_color); 
+border-left: 2px solid var(--wii_button_border_color); 
+border-right: 2px solid var(--wii_button_border_color);
+
+Werd veranderd naar het volgende
+border: 2px solid var(--wii_button_border_color);
+border-bottom: none;
+
 ### Donderdag 5 februari
 
 ### Vrijdag 6 februari
