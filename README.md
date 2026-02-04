@@ -37,8 +37,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not
 
 #### AI:
 Gevraagd of hij de volgende regels korter kon maken:
-border-top: 2px solid var(--wii_button_border_color); 
-border-left: 2px solid var(--wii_button_border_color); 
+border-top: 2px solid var(--wii_button_border_color);
+border-left: 2px solid var(--wii_button_border_color);
 border-right: 2px solid var(--wii_button_border_color);
 
 Werd veranderd naar het volgende
