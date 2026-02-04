@@ -24,7 +24,7 @@ Vrij
 
 ### Maandag 9 februari
 
-### Donderdag 10 februari
+### Dinsdag 10 februari
 
 ### Woensdag 11 februari
 
