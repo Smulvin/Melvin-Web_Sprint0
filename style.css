@@ -25,11 +25,8 @@
     --wii_button_shadow: drop-shadow(0 2px 0px var(--wii_button_border_color_dark));
     --wii_font: 'Jost', sans-serif;
 
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --wii-color: #2c3033;
-        }
-
+    @media (prefers-color-scheme:dark) {
+        --wii-color: #2c3033;
     }
 }
 
