@@ -12,15 +12,13 @@
 
     /* Kleurenpalet wii controller wit:  https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1146475106.jpg */
     /* Kleurenpalet wii controller zwart: https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1674897526.jpg */
-    --wii-color: #efefef;
-    --wii-text-color: #000000;
-
-    /* Kleurenpalet wii controller:  https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1146475106.jpg */
-    --wii_white: #efefef;
+    --wii_color: #efefef;
+    --wii_color-text: #000000;
 
     --wii_red_power: #c19095;
     --wii_controller_blue: #1d95ba;
     --wii_button_border_color: #c4c7cc;
+    --wii_button_border_color_dark: #a7a7a7;
     --wii_light_off: #67686c;
     --wii_controller_width: 100px;
     --wii_controller_height: 442px;
@@ -29,8 +27,8 @@
     --wii_font: 'Jost', sans-serif;
 
     @media (prefers-color-scheme:dark) {
-        --wii-color: #2c3033;
-        --wii-color-text: #ffffff;
+        --wii_color: #2c3033;
+        --wii_color-text: #ffffff;
     }
 }
 
@@ -49,7 +47,8 @@ body {
 
 /* Wii dimensions: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNw2Ip8d8CU5oWvMjqvJO2AsS2SEM0ilbTA&s */
 #wii {
-    background-color: var(--wii_white);
+    background-color: var(--wii_color);
+    color: var(--wii_color-text);
     width: var(--wii_controller_width);
     height: var(--wii_controller_height);
     border-radius: 10px;
@@ -58,7 +57,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: Jost, sans-serif;
-    color: var(--wii-color-text);
+
     transition: transform 0.4s ease;
 
     @media (width > 40em) {
@@ -80,7 +79,6 @@ body {
     position: absolute;
     top: 5px;
     left: 5px;
-}
 
     button {
         color: var(--wii_red_power);
@@ -88,8 +86,11 @@ body {
         border-radius: 50%;
         padding: 2px;
         aspect-ratio: 1/1;
-        background: var(--wii-color);
+        background: var(--wii_color);
     }
+}
+
+
 
 #wii_power_container p {
     font-size: 50%;
@@ -102,7 +103,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-top: 40px;
-}
 
     button:nth-of-type(1) {
         grid-area: 1 / 2;
@@ -110,34 +110,36 @@ body {
         border-bottom: none;
         aspect-ratio: 1/1;
         width: 20px;
-        background: var(--wii-color);
+        background: var(--wii_color);
     }
 
-#wii_direction_buttons button:nth-of-type(2) {
-    grid-row: 2;
-    grid-column: 1;
-    border: 2px solid var(--wii_button_border_color);
-    border-right: none;
-    filter: var(--wii_button_shadow);
-    background: var(--wii_white);
-}
+    button:nth-of-type(2) {
+        grid-row: 2;
+        grid-column: 1;
+        border: 2px solid var(--wii_button_border_color);
+        border-right: none;
+        filter: var(--wii_button_shadow);
+        background: var(--wii_color);
+    }
 
-#wii_direction_buttons button:nth-of-type(3) {
-    grid-row: 2;
-    grid-column: 3;
-    border: 2px solid var(--wii_button_border_color);
-    border-left: none;
-    filter: var(--wii_button_shadow);
-    background: var(--wii_white);
-}
+    button:nth-of-type(3) {
+        grid-row: 2;
+        grid-column: 3;
+        border: 2px solid var(--wii_button_border_color);
+        border-left: none;
+        filter: var(--wii_button_shadow);
+        background: var(--wii_color);
+    }
 
-#wii_direction_buttons button:nth-of-type(4) {
-    grid-row: 3;
-    grid-column: 2;
-    border: 2px solid var(--wii_button_border_color);
-    border-top: none;
-    filter: var(--wii_button_shadow);
-    background: var(--wii_white);
+    button:nth-of-type(4) {
+        grid-row: 3;
+        grid-column: 2;
+        border: 2px solid var(--wii_button_border_color);
+        border-top: none;
+        filter: var(--wii_button_shadow);
+        background: var(--wii_color);
+    }
+
 }
 
 #wii_direction_buttons button hr {
@@ -148,7 +150,7 @@ body {
 }
 
 #wii_direction_buttons button:first-of-type hr,
-#wii_direction_buttons button:last-of-type hr{
+#wii_direction_buttons button:last-of-type hr {
     transform: rotate(90deg);
 }
 
@@ -165,7 +167,8 @@ body {
     align-items: center;
     justify-content: center;
     filter: var(--wii_button_shadow);
-    background: var(--wii_white);
+    background: var(--wii_color);
+    
 }
 
 /**** Center Buttons ****/
@@ -184,13 +187,15 @@ body {
 }
 
 #wii_center_buttons>p,
-#wii_center_buttons section>i 
-{
+#wii_center_buttons section>i {
     border: 2px solid var(--wii_button_border_color);
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     height: 20px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #wii_center_buttons section {
@@ -203,10 +208,15 @@ body {
     color: var(--wii_controller_blue);
 }
 
+#wii_center_buttons>p {
+    filter: var(--wii_button_shadow);
+    background: var(--wii_color);
+}
+
 
 
 /**** Sound holes ****/
-#wii_sound_holes{
+#wii_sound_holes {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -257,7 +267,7 @@ body {
     width: 25px;
     text-align: center;
     filter: var(--wii_button_shadow);
-    background: var(--wii_white);
+    background: var(--wii_color);
 }
 
 /**** Player Lights ****/
