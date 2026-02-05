@@ -1,6 +1,3 @@
-/* Font URL: https://fonts.google.com/specimen/Jost?categoryFilters=Feeling:%2FExpressive%2FCalm;Appearance:%2FTheme%2FTechno */
-@import url('https://fonts.googleapis.com/css2?family=Goblin+One&family=Jost:ital,wght@0,100..900;1,100..900&family=Rye&family=Space+Grotesk:wght@300..700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -10,24 +7,15 @@
 :root {
     --background: #686868;
 
-    --color-scheme: light dark;
-
-    /* Kleurenpalet wii controller wit:  https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1146475106.jpg */
-    /* Kleurenpalet wii controller zwart: https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1674897526.jpg */
-    --wii-color: #efefef;
+    /* Kleurenpalet wii controller:  https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1146475106.jpg */
+    --wii_white: #efefef;
     --wii_red_power: #c19095;
     --wii_controller_blue: #1d95ba;
     --wii_button_border_color: #c4c7cc;
-    --wii_button_border_color_dark: #8e8e8e;
     --wii_light_off: #67686c;
     --wii_controller_width: 100px;
     --wii_controller_height: 442px;
-    --wii_button_shadow: drop-shadow(0 2px 0px var(--wii_button_border_color_dark));
-    --wii_font: 'Jost', sans-serif;
-
-    @media (prefers-color-scheme:dark) {
-        --wii-color: #2c3033;
-    }
+    --wii_button_shadow: drop-shadow(0 2px 0px var(--wii_button_border_color))
 }
 
 body {
@@ -45,7 +33,7 @@ body {
 
 /* Wii dimensions: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNw2Ip8d8CU5oWvMjqvJO2AsS2SEM0ilbTA&s */
 #wii {
-    background-color: var(--wii-color);
+    background-color: var(--wii_white);
     width: var(--wii_controller_width);
     height: var(--wii_controller_height);
     border-radius: 10px;
@@ -53,7 +41,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Jost, sans-serif;
 }
 
 /**** Power Button ****/
@@ -64,19 +51,20 @@ body {
     position: absolute;
     top: 5px;
     left: 5px;
+}
 
-    button {
-        color: var(--wii_red_power);
-        border: 1px solid var(--wii_button_border_color);
-        border-radius: 50%;
-        padding: 2px;
-        aspect-ratio: 1/1;
-    }
+#wii_power_container button {
+    color: var(--wii_red_power);
+    border: 1px solid var(--wii_button_border_color);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 100%;
+    padding: 2px;
+}
 
-    p {
-        font-size: 8px;
-        text-transform: uppercase;
-    }
+#wii_power_container p {
+    font-size: 50%;
+    text-transform: uppercase;
 }
 
 /**** Direction Buttons ****/
@@ -85,38 +73,42 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-top: 40px;
+}
 
-    button:nth-of-type(1) {
-        grid-area: 1 / 2;
-        border: 2px solid var(--wii_button_border_color);
-        border-bottom: none;
-        aspect-ratio: 1/1;
-        width: 20px;
-    }
+#wii_direction_buttons button:nth-of-type(1) {
+    grid-row: 1;
+    grid-column: 2;
+    border: 2px solid var(--wii_button_border_color);
+    border-bottom: none;
+    aspect-ratio: 1/1;
+    width: 20px;
+}
 
-    button:nth-of-type(2) {
-        grid-area: 2 / 1;
-        border: 2px solid var(--wii_button_border_color);
-        border-right: none;
-        filter: var(--wii_button_shadow);
-        background: var(--wii-color);
-    }
+#wii_direction_buttons button:nth-of-type(2) {
+    grid-row: 2;
+    grid-column: 1;
+    border: 2px solid var(--wii_button_border_color);
+    border-right: none;
+    filter: var(--wii_button_shadow);
+    background: var(--wii_white);
+}
 
-    button:nth-of-type(3) {
-        grid-area: 2 / 3;
-        border: 2px solid var(--wii_button_border_color);
-        border-left: none;
-        filter: var(--wii_button_shadow);
-        background: var(--wii-color);
-    }
+#wii_direction_buttons button:nth-of-type(3) {
+    grid-row: 2;
+    grid-column: 3;
+    border: 2px solid var(--wii_button_border_color);
+    border-left: none;
+    filter: var(--wii_button_shadow);
+    background: var(--wii_white);
+}
 
-    button:nth-of-type(4) {
-        grid-area: 3 / 2;
-        border: 2px solid var(--wii_button_border_color);
-        border-top: none;
-        filter: var(--wii_button_shadow);
-        background: var(--wii-color);
-    }
+#wii_direction_buttons button:nth-of-type(4) {
+    grid-row: 3;
+    grid-column: 2;
+    border: 2px solid var(--wii_button_border_color);
+    border-top: none;
+    filter: var(--wii_button_shadow);
+    background: var(--wii_white);
 }
 
 #wii_direction_buttons button hr {
@@ -127,7 +119,7 @@ body {
 }
 
 #wii_direction_buttons button:first-of-type hr,
-#wii_direction_buttons button:last-of-type hr {
+#wii_direction_buttons button:last-of-type hr{
     transform: rotate(90deg);
 }
 
@@ -144,7 +136,7 @@ body {
     align-items: center;
     justify-content: center;
     filter: var(--wii_button_shadow);
-    background: var(--wii-color);
+    background: var(--wii_white);
 }
 
 /**** Center Buttons ****/
@@ -163,20 +155,13 @@ body {
 }
 
 #wii_center_buttons>p,
-#wii_center_buttons section>i {
+#wii_center_buttons section>i 
+{
     border: 2px solid var(--wii_button_border_color);
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     height: 20px;
     text-align: center;
-}
-
-#wii_center_buttons>p {
-    filter: var(--wii_button_shadow);
-    background: var(--wii-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #wii_center_buttons section {
@@ -192,7 +177,7 @@ body {
 
 
 /**** Sound holes ****/
-#wii_sound_holes {
+#wii_sound_holes{
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -243,7 +228,7 @@ body {
     width: 25px;
     text-align: center;
     filter: var(--wii_button_shadow);
-    background: var(--wii-color);
+    background: var(--wii_white);
 }
 
 /**** Player Lights ****/
