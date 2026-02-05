@@ -67,6 +67,7 @@ body {
     @media (width > 60em) {
         transform: rotate(-90deg) scale(2);
     }
+
 }
 
 /**** Power Button ****/
@@ -77,6 +78,7 @@ body {
     position: absolute;
     top: 5px;
     left: 5px;
+}
 
     button {
         color: var(--wii_red_power);
@@ -87,10 +89,11 @@ body {
         background: var(--wii-color);
     }
 
-    p {
-        font-size: 8px;
         text-transform: uppercase;
     }
+#wii_power_container p {
+    font-size: 50%;
+    text-transform: uppercase;
 }
 
 /**** Direction Buttons ****/
@@ -99,6 +102,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-top: 40px;
+}
 
     button:nth-of-type(1) {
         grid-area: 1 / 2;
@@ -116,22 +120,22 @@ body {
         filter: var(--wii_button_shadow);
         background: var(--wii-color);
     }
+    grid-column: 1;
 
     button:nth-of-type(3) {
-        grid-area: 2 / 3;
-        border: 2px solid var(--wii_button_border_color);
-        border-left: none;
-        filter: var(--wii_button_shadow);
-        background: var(--wii-color);
-    }
+#wii_direction_buttons button:nth-of-type(3) {
+    grid-column: 3;
+    border-left: none;
+    filter: var(--wii_button_shadow);
+    background: var(--wii_white);
+}
 
-    button:nth-of-type(4) {
-        grid-area: 3 / 2;
         border: 2px solid var(--wii_button_border_color);
         border-top: none;
         filter: var(--wii_button_shadow);
         background: var(--wii-color);
     }
+    filter: var(--wii_button_shadow);
 }
 
 #wii_direction_buttons button hr {
@@ -207,7 +211,7 @@ body {
 
 
 /**** Sound holes ****/
-#wii_sound_holes {
+#wii_sound_holes{
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -258,7 +262,7 @@ body {
     width: 25px;
     text-align: center;
     filter: var(--wii_button_shadow);
-    background: var(--wii-color);
+    background: var(--wii_white);
 }
 
 /**** Player Lights ****/
