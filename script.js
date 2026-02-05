@@ -1,1 +1,3 @@
-console.log("Hello World");
+document.getElementById("closeBtn").addEventListener("click", function () {
+    window.close();
+  });
