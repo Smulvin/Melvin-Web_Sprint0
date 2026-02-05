@@ -48,6 +48,10 @@ border-bottom: none;
 <img src="Assets/img_readme/WiiController_Dag2.png">
 
 ### Donderdag 5 februari
+Begon vandaag met 2 verschillende workshops, na de korte presentatie van Vasilis en Sanne. Eerst had ik een workshop over Theming van Vasilis. Hier had ik nog niet mee gewerkt in mijn project want ik wilde wachten op die workshop. Tijdens de workshop heb ik geleerd over verschillende manieren over hoe je theming kan regelen op je website. Ik heb na die tijd het ook op 1 van die manieren in mijn eigen project gedaan. Het duurde iets langer dan verwacht om dit werkend te krijgen, maar het waren uiteidnelijk allemaal kleine dingetjes die verkeerd gingen. Na de workshop had ik de workshop over responsiveness gevolgd van Sanne, veel dingen hiervan had ik wel eens eerder al mee gewerkt, maar het was wel een goede reminder. Want ik wel heel handig vond was de manier van werken met een grid-area. Ik weet nog niet of ik dat nodig ga hebben voor mijn persoonlijke website, maar kan ik zeker gebruiken in komende projecten. Voor mijn eigen website heb ik dus gewerkt aan theeming vandaag, was daar ongeveer een uur mee bezig. Ik heb ook mijn controller responsive gemaakt. Ik wist niet zeker of ik genoeg tijd zou hebben om een ps5 controller nog te maken voor de deadline, dus heb ik voor nu besloten om de wii controller te laten draaien en scalen zodat hij responsive is. Dit duurde ongeveer een half uurtje. Ik heb tussendoor nog wat kleine puntjes op de I gezet voor mijn website zoals: font, borders, correcte maten en selectors nesten en een sfx voor de close button. Dit duurde bij elkaar iets van 1,5 uur. Ik had helaas wat merge problemen waar ik ook een half uur mee bezig was om te fixen vandaag.
+
+<img src="Assets/img_readme/WiiController_Dag3.png">
+<img src="Assets/img_readme/Workshop_Responsive.png">
 
 ### Vrijdag 6 februari
 

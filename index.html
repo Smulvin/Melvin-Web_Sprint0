@@ -22,112 +22,118 @@
     IDEE
     Controller op scherm hebben staan, verschillende knoppen openen stukjes tekst oid
     De controller veranderd van kleur in met dark mode / light mode
-    Hij veranderd van soort controller voor responsiveness
+    Hij veranderd van soort controller voor responsiveness / op het moment draait de controller alleen
     Alleen divs voor gebruik van styling 
     -->
 
     <main class="controller">
-        <div id="wii">
+        <section id="wii">
             <!--Power Button-->
-            <div id="wii_power_container">
+            <section id="wii_power_container">
                 <button id="closeBtn">
                     <i class="fa-solid fa-power-off"></i>
                 </button>
                 <!--Source: https://www.youtube.com/shorts/Wu71oHDVmNc -->
                 <audio id="closeSfx" src="Assets/sfx/closeSFX.mp3"></audio>
                 <p>Power</p>
-            </div>
+            </section>
 
 
-                <!--Direction Buttons-->
-                <div id="wii_direction_buttons">
-                    <button><hr></button>
-                    <button><hr></button>
-                    <button><hr></button>
-                    <button><hr></button>
-                </div>
+            <!--Direction Buttons-->
+            <section id="wii_direction_buttons">
+                <button>
+                    <hr>
+                </button>
+                <button>
+                    <hr>
+                </button>
+                <button>
+                    <hr>
+                </button>
+                <button>
+                    <hr>
+                </button>
+            </section>
 
-                <!--A Button-->
-                <div id="wii_A_button">
-                    <p>A</p>
-                </div>
+            <!--A Button-->
+            <section id="wii_A_button">
+                <p>A</p>
+            </section>
 
-                <!--Center Buttons-->
-                <div id="wii_center_buttons">
-                    <p>-</p>
-                    <section>
-                        <i class="fa-solid fa-house"></i>
-                        <p>Home</p>
-                    </section>
-                    <p>+</p>
-                </div>
+            <!--Center Buttons-->
+            <section id="wii_center_buttons">
+                <p>-</p>
+                <section>
+                    <i class="fa-solid fa-house"></i>
+                    <p>Home</p>
+                </section>
+                <p>+</p>
+            </section>
 
-                <!--Sound holes-->
-                <div id="wii_sound_holes">
-                    <div class="wii_hole_small">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="wii_hole_medium">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="wii_hole_big">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="wii_hole_big">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="wii_hole_medium">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div class="wii_hole_small">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    
-
-
-
-                </div>
-
-                <!--1 / 2 Buttons-->
-                <div id="wii_1_2_buttons">
-                    <p>1</p>
-                    <p>2</p>
-                </div>
-
-                <!--Player Lights-->
-                <div id="wii_player_lights">
+            <!--Sound holes-->
+            <section id="wii_sound_holes">
+                <section class="wii_hole_small">
                     <div></div>
                     <div></div>
                     <div></div>
+                </section>
+                <section class="wii_hole_medium">
                     <div></div>
-                </div>
+                    <div></div>
+                    <div></div>
+                </section>
+                <section class="wii_hole_big">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </section>
+                <section class="wii_hole_big">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </section>
+                <section class="wii_hole_medium">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </section>
+                <section class="wii_hole_small">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </section>
 
-                <!--Wii Text-->
-                <div id="wii_text">
-                    <p>Wii</p>
-                </div>
 
-        </div>
+            </section>
 
-    </section>
+            <!--1 / 2 Buttons-->
+            <section id="wii_1_2_buttons">
+                <p>1</p>
+                <p>2</p>
+            </section>
+
+            <!--Player Lights-->
+            <section id="wii_player_lights">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </section>
+
+            <!--Wii Text-->
+            <section id="wii_text">
+                <p>Wii</p>
+            </section>
+
+        </section>
+
+    </main>
 
 
 
 
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

@@ -39,6 +39,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+
 }
 
 /******************/
@@ -60,7 +62,7 @@ body {
 
     transition: transform 0.4s ease;
 
-    @media (width > 40em) {
+    @media (width > 40em) and (height > 55em) {
         transform: scale(2);
     }
 
@@ -140,20 +142,18 @@ body {
         background: var(--wii_color);
     }
 
-}
+    hr {
+        margin: 2px;
+        height: 3px;
+        border: none;
+        background-color: var(--wii_button_border_color);
+    }
 
-#wii_direction_buttons button hr {
-    margin: 2px;
-    height: 3px;
-    border: none;
-    background-color: var(--wii_button_border_color);
+    button:first-of-type hr,
+    button:last-of-type hr {
+        transform: rotate(90deg);
+    }
 }
-
-#wii_direction_buttons button:first-of-type hr,
-#wii_direction_buttons button:last-of-type hr {
-    transform: rotate(90deg);
-}
-
 
 /**** A Button ****/
 #wii_A_button {
@@ -168,7 +168,6 @@ body {
     justify-content: center;
     filter: var(--wii_button_shadow);
     background: var(--wii_color);
-    
 }
 
 /**** Center Buttons ****/
@@ -178,12 +177,12 @@ body {
     gap: 10px;
     justify-content: space-evenly;
     margin-top: 40px;
-}
 
-#wii_center_buttons section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 #wii_center_buttons>p,
@@ -291,5 +290,6 @@ body {
 
 /**** Wii text ****/
 #wii_text {
+    margin-top: 5px;
     font-size: 20px;
 }
