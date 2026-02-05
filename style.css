@@ -15,6 +15,7 @@
     /* Kleurenpalet wii controller wit:  https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1146475106.jpg */
     /* Kleurenpalet wii controller zwart: https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1674897526.jpg */
     --wii-color: #efefef;
+    --wii-text-color: #000000;
     --wii_red_power: #c19095;
     --wii_controller_blue: #1d95ba;
     --wii_button_border_color: #c4c7cc;
@@ -27,6 +28,7 @@
 
     @media (prefers-color-scheme:dark) {
         --wii-color: #2c3033;
+        --wii-color-text: #ffffff;
     }
 }
 
@@ -54,6 +56,17 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: Jost, sans-serif;
+    color: var(--wii-color-text);
+    transition: transform 0.4s ease;
+
+    @media (width > 40em) {
+        transform: scale(2);
+    }
+
+
+    @media (width > 60em) {
+        transform: rotate(-90deg) scale(2);
+    }
 }
 
 /**** Power Button ****/
@@ -71,6 +84,7 @@ body {
         border-radius: 50%;
         padding: 2px;
         aspect-ratio: 1/1;
+        background: var(--wii-color);
     }
 
     p {
@@ -92,6 +106,7 @@ body {
         border-bottom: none;
         aspect-ratio: 1/1;
         width: 20px;
+        background: var(--wii-color);
     }
 
     button:nth-of-type(2) {
@@ -262,7 +277,7 @@ body {
 
 #wii_player_lights div:first-of-type {
     background: var(--wii_controller_blue);
-    filter: drop-shadow(0px 0px 3px var(--wii_controller_blue))
+    filter: drop-shadow(0px 0px 3px var(--wii_controller_blue));
 }
 
 /**** Wii text ****/
