@@ -45,6 +45,8 @@ Werd veranderd naar het volgende: <br>
 border: 2px solid var(--wii_button_border_color); <br>
 border-bottom: none;
 
+<img src="Assets/img_readme/WiiController_Dag2.png">
+
 ### Donderdag 5 februari
 
 ### Vrijdag 6 februari
