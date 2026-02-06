@@ -176,6 +176,10 @@ main {
     filter: var(--wii_button_shadow);
     background: var(--wii_color);
 
+    button {
+        border: none;
+    }
+
 }
 
 /**** Center Buttons ****/
@@ -193,8 +197,8 @@ main {
     align-items: center;
 }
 
-#wii_center_buttons>p,
-#wii_center_buttons section>i {
+#wii_center_buttons>button,
+#wii_center_buttons section>button>i {
     border: 2px solid var(--wii_button_border_color);
     border-radius: 50%;
     aspect-ratio: 1 / 1;
@@ -203,6 +207,10 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#wii_center_buttons>section button {
+    border:none;
 }
 
 #wii_center_buttons section {
@@ -215,7 +223,7 @@ main {
     color: var(--wii_controller_blue);
 }
 
-#wii_center_buttons>p {
+#wii_center_buttons>button {
     filter: var(--wii_button_shadow);
     background: var(--wii_color);
 }
@@ -340,4 +348,178 @@ main {
 
 .pop-up_active {
     display: block;
+}
+
+/*********************/
+/* Pop-up Animations */
+/*********************/
+
+
+/* Code found on Animista.com */
+/* Slide Forward Top */
+.slide-fwd-top {
+	-webkit-animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-fwd-top {
+  0% {
+    -webkit-transform: translateZ(0) translateY(0)  scale(0.8);
+            transform: translateZ(0) translateY(0)  scale(0.8);
+  }
+  100% {
+    -webkit-transform: translateZ(160px) translateY(-100px) scale(1);
+            transform: translateZ(160px) translateY(-100px) scale(1);
+  }
+}
+@keyframes slide-fwd-top {
+  0% {
+    -webkit-transform: translateZ(0) translateY(0)  scale(0.8);
+            transform: translateZ(0) translateY(0)  scale(0.8);
+  }
+  100% {
+    -webkit-transform: translateZ(160px) translateY(-100px) scale(1);
+            transform: translateZ(160px) translateY(-100px) scale(1);
+  }
+}
+
+
+/* Slide Forward Left */
+.slide-fwd-left {
+  -webkit-animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-fwd-left {
+  0% {
+    -webkit-transform: translateZ(0) translateX(0) scale(0.8);
+            transform: translateZ(0) translateX(0) scale(0.8);
+  }
+  100% {
+    -webkit-transform: translateZ(160px) translateX(-100px) scale(1);
+            transform: translateZ(160px) translateX(-100px) scale(1);
+  }
+}
+
+@keyframes slide-fwd-left {
+  0% {
+    -webkit-transform: translateZ(0) translateX(0) scale(0.8);
+            transform: translateZ(0) translateX(0) scale(0.8);
+  }
+  100% {
+    -webkit-transform: translateZ(160px) translateX(-100px) scale(1);
+            transform: translateZ(160px) translateX(-100px) scale(1);
+  }
+}
+
+/* Slide Forward Right */
+.slide-fwd-right {
+	-webkit-animation: slide-fwd-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-fwd-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-fwd-right {
+  0% {
+    -webkit-transform: translateZ(0) translateX(0) scale(0.8);
+            transform: translateZ(0) translateX(0) scale(0.8);
+  }
+  100% {
+    -webkit-transform: translateZ(160px) translateX(100px) scale(1);
+            transform: translateZ(160px) translateX(100px) scale(1);
+  }
+}
+@keyframes slide-fwd-right {
+  0% {
+    -webkit-transform: translateZ(0) translateX(0) scale(0.8);
+            transform: translateZ(0) translateX(0) scale(0.8);
+  }
+  100% {
+    -webkit-transform: translateZ(160px) translateX(100px) scale(1);
+            transform: translateZ(160px) translateX(100px) scale(1);
+  }
+}
+
+/* Slide Forward Bottom */
+.slide-fwd-bottom {
+	-webkit-animation: slide-fwd-bottom 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-fwd-bottom 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-fwd-bottom {
+  0% {
+    -webkit-transform: translateZ(0) translateY(0) scale(0.8);
+            transform: translateZ(0) translateY(0) scale(0.8);
+  }
+  100% {
+    -webkit-transform: translateZ(160px) translateY(100px) scale(1);
+            transform: translateZ(160px) translateY(100px) scale(1);
+  }
+}
+@keyframes slide-fwd-bottom {
+  0% {
+    -webkit-transform: translateZ(0) translateY(0) scale(0.8);
+            transform: translateZ(0) translateY(0) scale(0.8);
+  }
+  100% {
+    -webkit-transform: translateZ(160px) translateY(100px) scale(1);
+            transform: translateZ(160px) translateY(100px) scale(1);
+  }
+}
+
+/******************/
+/* Wii Animations */
+/******************/
+
+/* Rotate clockwise twice */
+.rotate-clockwise {
+  -webkit-animation: rotate-clockwise 0.6s ease-in-out both;
+          animation: rotate-clockwise 0.6s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+@keyframes rotate-clockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+/* Rotate counterclockwise twice */
+.rotate-counterclockwise {
+  -webkit-animation: rotate-counterclockwise 0.6s ease-in-out both;
+          animation: rotate-counterclockwise 0.6s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-counterclockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-720deg);
+            transform: rotate(-720deg);
+  }
+}
+@keyframes rotate-counterclockwise {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-720deg);
+            transform: rotate(-720deg);
+  }
 }

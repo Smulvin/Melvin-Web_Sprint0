@@ -55,18 +55,47 @@ function hideAllPopups() {
 function togglePopup(popup) {
   if (!popup) return;
 
-  // If same popup → close it
+  // Same popup → close
   if (activePopup === popup) {
+    popup.classList.remove("slide-fwd-left");
     hideAllPopups();
     return;
   }
 
-  // Otherwise open requested popup
+  // Close others
   hideAllPopups();
+
+  // Show popup
   popup.classList.remove("pop-up_inactive");
   popup.classList.add("pop-up_active");
+
+  if (popup.id === "pop-up1") {
+    popup.classList.remove("slide-fwd-top"); 
+    void popup.offsetWidth; 
+    popup.classList.add("slide-fwd-top");
+  }
+
+  if (popup.id === "pop-up2") {
+    popup.classList.remove("slide-fwd-left"); 
+    void popup.offsetWidth; 
+    popup.classList.add("slide-fwd-left");
+  }
+
+  if (popup.id === "pop-up3") {
+    popup.classList.remove("slide-fwd-right");
+    void popup.offsetWidth;
+    popup.classList.add("slide-fwd-right");
+  }
+
+  if (popup.id === "pop-up4") {
+    popup.classList.remove("slide-fwd-bottom");
+    void popup.offsetWidth;
+    popup.classList.add("slide-fwd-bottom");
+  }
+
   activePopup = popup;
 }
+
 
 // =======================
 // Button event listeners
@@ -104,3 +133,52 @@ document.addEventListener("click", (e) => {
     hideAllPopups();
   }
 });
+
+// =======================
+// Rotate the whole controller
+// =======================
+
+// SFX link: https://www.youtube.com/watch?v=psc_A0bUgSQ
+const wii = document.querySelector("main");
+
+
+// Adjust selectors to match your + and - buttons
+const plusBtn = document.getElementById("BtnPlus");
+const minusBtn = document.getElementById("BtnMinus"); 
+const barrelSfx = document.getElementById("barrelSfx");
+
+
+function rotateElement(element, animationClass) {
+  if (!element) return;
+
+  barrelSfx.volume = 0.3;
+  barrelSfx.play();
+
+  // Remove both rotate classes
+  element.classList.remove("rotate-clockwise", "rotate-counterclockwise");
+
+  // Reset transform to 0
+  element.style.transform = "rotate(0deg)";
+
+  // Force reflow to allow animation to replay
+  void element.offsetWidth;
+
+  // Add the animation class
+  element.classList.add(animationClass);
+
+}
+
+
+
+// Rotate clockwise on double-click +
+plusBtn?.addEventListener("dblclick", () => {
+  rotateElement(wii, "rotate-clockwise");
+
+});
+
+// Rotate counterclockwise on double-click -
+minusBtn?.addEventListener("dblclick", () => {
+  rotateElement(wii, "rotate-counterclockwise");
+
+});
+
