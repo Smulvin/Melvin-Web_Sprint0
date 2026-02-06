@@ -39,8 +39,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
-
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /******************/
@@ -293,4 +300,44 @@ body {
 #wii_text {
     margin-top: 5px;
     font-size: 20px;
+}
+
+
+/***********/
+/* Pop-ups */
+/***********/
+
+#pop-upLayer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#pop-up1, #pop-up2, #pop-up3, #pop-up4 {
+    width: 20em;
+    background: var(--wii_color);
+    color: var(--wii_color-text);
+    border: 5px solid var(--wii_button_border_color);
+    border-radius: 20px;;
+    font-family: var(--wii_font);
+    filter: drop-shadow(0 1em 0.5em var(--wii_button_border_color_dark));
+    padding: 1em;
+
+    p {
+        margin-top: 1em;
+    }
+
+    @media (width > 40em) {
+        width: 30em;
+    }
+}
+
+.pop-up_inactive {
+    display: none;
+}
+
+.pop-up_active {
+    display: block;
 }

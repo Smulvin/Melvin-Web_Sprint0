@@ -60,6 +60,7 @@ Geleerd over een website die makkelijk animaties laat zien en hoe de css code da
 <img src="Assets/img_readme/Workshop_Responsive.png">
 
 ### Vrijdag 6 februari
+Vandaag was ik eerst bezig met het maken van de pop-ups, dit duurde ongeveer een uur. Daarna ging ik bezig om de API te laten werken zodat er informatie in 1 an die pop-ups zou worden getoond. Ik kon een groot deel van de code uit de workshop van Justus overnemen. Daardoor had ik het binnen een half uurtje al werkend gekregen.
 
 ## Week 2
 
