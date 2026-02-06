@@ -61,6 +61,13 @@ Geleerd over een website die makkelijk animaties laat zien en hoe de css code da
 
 ### Vrijdag 6 februari
 Vandaag was ik eerst bezig met het maken van de pop-ups, dit duurde ongeveer een uur. Daarna ging ik bezig om de API te laten werken zodat er informatie in 1 an die pop-ups zou worden getoond. Ik kon een groot deel van de code uit de workshop van Justus overnemen. Daardoor had ik het binnen een half uurtje al werkend gekregen. Daarna heb ik gewerkt aan het compleet draaien van de controller wanneer je op de + of - knoppen double klikt. Hier had ik ook een animatie voor gebruikt van animista en had ik een sfx aan toegevoegd. Eerst was er een probleem met de scaling. Wat kwam door een probleem met een media query. Ik kon het fixen toen ik ipv alleen de controller liet draaien, de complete main liet draaien. Dit duurde ongeveer een uur. Daarna heb ik kort nog even geprobeerd te fixen dat de A knop ook het thema veranderd. Dit duurde dan ook maar max 15 minuten.
+
+#### Feedback uit markt
+De meeste feedback die ik had gekregen was van Sanne. Hij vertelde me dat het voor de pop-ups misschien handig was om te kijken naar het pop-over attribute. Dat scheelt namelijk wat JS en beetje CSS code. Daar ga ik dus sowieso naar kijken, want nu had ik het redelijk primitief gedaan met een display: none en display: block. Voor de rest had hij een voorbeeld laten zien van een SNES controller die hij had gemaakt met animatie daarbij. Daar kan ik inspiratie uit halen voor het stylen van mijn eigen controller. Daarbij werd verteld dat het wel handig is om nog een knop over te laten voor de nieuwe eis die we maandag gaan krijgen. Het laatste kleine beetje feedback was dat ik nog een favicon kon toevoegen. Daar had ik nog niet naar gekeken namelijk.
+
+Link naar de pagina van Sanne: https://sinds1971.nl/spelenmetcss/2022-feb/stephan/index.html <br>
+Link naar pagina over pop over: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover
+
 ## Week 2
 
 ### Maandag 9 februari
