@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&family=Jost:ital,wght@0,100..900;1,100..900&family=Rye&family=Space+Grotesk:wght@300..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -102,13 +104,11 @@ main {
         aspect-ratio: 1/1;
         background: var(--wii_color);
     }
-}
 
-
-
-#wii_power_container p {
-    font-size: 50%;
-    text-transform: uppercase;
+    p {
+        font-size: 50%;
+        text-transform: uppercase;
+    }
 }
 
 /**** Direction Buttons ****/
@@ -259,15 +259,14 @@ main {
     display: flex;
     justify-content: space-around;
     gap: 2px;
+
+    div {
+        aspect-ratio: 1/1;
+        background: black;
+        border-radius: 50%;
+    }
 }
 
-.wii_hole_small div,
-.wii_hole_medium div,
-.wii_hole_big div {
-    aspect-ratio: 1/1;
-    background: black;
-    border-radius: 50%;
-}
 
 /**** 1 2 Buttons ****/
 #wii_1_2_buttons {
@@ -296,18 +295,19 @@ main {
     justify-content: space-between;
     gap: 7px;
     margin-top: 30px;
+
+    * {
+        aspect-ratio: 1 / 1;
+        width: 8px;
+        background: var(--wii_light_off);
+    }
+
+    div:first-of-type {
+        background: var(--wii_controller_blue);
+        filter: drop-shadow(0px 0px 3px var(--wii_controller_blue));
+    }
 }
 
-#wii_player_lights * {
-    aspect-ratio: 1 / 1;
-    width: 8px;
-    background: var(--wii_light_off);
-}
-
-#wii_player_lights div:first-of-type {
-    background: var(--wii_controller_blue);
-    filter: drop-shadow(0px 0px 3px var(--wii_controller_blue));
-}
 
 /**** Wii text ****/
 #wii_text {
