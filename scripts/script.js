@@ -182,3 +182,13 @@ minusBtn?.addEventListener("dblclick", () => {
 
 });
 
+// =======================
+// Dark mode Toggle
+// =======================
+
+const aBtn = document.getElementById("BtnA");
+
+aBtn.addEventListener("click", () => {
+    console.log("Dark mode toggled");
+    document.body.classList.toggle("dark-mode");
+});

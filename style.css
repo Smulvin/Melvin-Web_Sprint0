@@ -41,6 +41,11 @@ body {
     align-items: center;
 }
 
+body.dark-mode {
+    --wii_color: #2c3033;
+    --wii_color-text: #ffffff;
+}
+
 main {
     position: relative;
     width: 100%;
@@ -163,7 +168,7 @@ main {
 
 
 /**** A Button ****/
-#wii_A_button {
+#wii_A_button button {
     aspect-ratio: 1/1;
     width: 35px;
     border: 2px solid var(--wii_button_border_color);
@@ -175,11 +180,7 @@ main {
     justify-content: center;
     filter: var(--wii_button_shadow);
     background: var(--wii_color);
-
-    button {
-        border: none;
-    }
-
+    color: var(--wii_color-text);
 }
 
 /**** Center Buttons ****/
@@ -211,6 +212,7 @@ main {
 
 #wii_center_buttons>section button {
     border:none;
+    background-color: var(--wii_color);
 }
 
 #wii_center_buttons section {
@@ -226,6 +228,7 @@ main {
 #wii_center_buttons>button {
     filter: var(--wii_button_shadow);
     background: var(--wii_color);
+    color: var(--wii_color-text);
 }
 
 
@@ -283,6 +286,8 @@ main {
     text-align: center;
     filter: var(--wii_button_shadow);
     background: var(--wii_color);
+    color: var(--wii_color-text);
+
 }
 
 /**** Player Lights ****/
