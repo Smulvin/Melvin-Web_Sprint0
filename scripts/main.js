@@ -1,37 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const apiURL = "https://fdnd.directus.app/items/person/310";
 
-  // Popup elements
   const nameEl = document.getElementById("name");
-  const ageEl = document.getElementById("age");
-  const interestsEl = document.getElementById("interests");
+  const nicknameEl = document.getElementById("nickname");
+  const birthdateEl = document.getElementById("birthdate");
+  const gamesEl = document.getElementById("favoriteGames");
 
-  // Safety check
-  if (!nameEl || !ageEl || !interestsEl) {
-    console.error("Popup elements not found");
-    return;
-  }
+  if (!nameEl || !nicknameEl || !birthdateEl || !gamesEl) return;
 
-  // Fetch data
-  fetchJson(apiURL).then(json => {
-    console.log("API response:", json);
+  fetch(apiURL)
+    .then(res => res.json())
+    .then(json => {
+      if (!json?.data) return;
 
-    if (!json || !json.data) return;
+      const data = json.data;
 
-    nameEl.textContent = json.data.name;
-    ageEl.textContent = json.data.birthdate;
-    interestsEl.textContent = json.data.interests;
-  });
+      // Basic info
+      nameEl.textContent = data.name;
+      nicknameEl.textContent = data.nickname ?? "—";
+      birthdateEl.textContent = data.birthdate ?? "—";
 
-  // Fetch helper
-  async function fetchJson(url, payload = {}) {
-    try {
-      const response = await fetch(url, payload);
-      return await response.json();
-    } catch (error) {
-      console.error("Fetch error:", error);
-    }
-  }
+      // Parse custom JSON
+      let custom = {};
+      try {
+        custom = JSON.parse(data.custom);
+      } catch (e) {
+        console.error("Custom JSON parse failed", e);
+      }
 
+      const games = custom.favoriteGames;
+
+      if (Array.isArray(games) && games.length) {
+        const ul = document.createElement("ul");
+
+        games.forEach(game => {
+          const li = document.createElement("li");
+          li.textContent = `${game.title} — ${game.platform} (${game.releaseYear})`;
+          ul.appendChild(li);
+        });
+
+        gamesEl.appendChild(ul);
+      } else {
+        gamesEl.textContent = "No favorite games listed.";
+      }
+    })
+    .catch(err => console.error("Fetch error:", err));
 });

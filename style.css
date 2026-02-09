@@ -186,7 +186,7 @@ main {
 #wii_direction_buttons.left-pressed #BtnRight {transform: rotateY(-30deg); filter: drop-shadow(3px 2px 0 var(--wii_button_border_color_dark));  margin-left: -4px;}
 
 /* Right Button */
-#wii_direction_buttons.right-pressed #BtnRight {transform: rotateY(30deg) }
+#wii_direction_buttons.right-pressed #BtnRight {transform: rotateY(-22.5deg) }
 #wii_direction_buttons.right-pressed #BtnTop { filter: drop-shadow(-4px 0 var(--wii_button_border_color_dark)); transform:rotateY(-22.5deg); margin-right: -2px;}
 #wii_direction_buttons.right-pressed #BtnBottom { filter: drop-shadow(-4px 2px 0 var(--wii_button_border_color_dark)); transform:rotateY(-22.5deg); margin-right: -2px;}
 #wii_direction_buttons.right-pressed #BtnLeft {transform: rotateY(30deg); filter: drop-shadow(-3px 2px 0 var(--wii_button_border_color_dark)); margin-right: -4px;}
@@ -394,6 +394,10 @@ main {
 
     p {
         margin-top: 1em;
+    }
+
+    div ul {
+        list-style: none;
     }
 
     @media (width > 40em) {
