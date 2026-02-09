@@ -29,25 +29,28 @@
     -->
 
     <main>
-        <section id="pop-upLayer">
-            <article id="pop-up1"  class="pop-up_inactive">
-                <h1 id="name"></h1>
-                <p id="age"></p>
-                <p id="interests"></p>
-            </article>
-            <article id="pop-up2" class="pop-up_inactive">
-                <h2>Leerdoel 1:</h2>
-                <p>Ik wil mezelf verbeteren in het maken van animaties door gebruik van CSS, zodat ik mijn website er interactiever en leuker uit kan laten zien.</p>
-            </article>
-            <article id="pop-up3" class="pop-up_inactive">
-                <h2>Leerdoel 2:</h2>
-                <p>Ik wil mijn website correct responsive maken door gebruik van de juiste styling in CSS en waar mogelijk zonder media queries, zodat mijn website er op alle schermen goed uit blijft zien.</p>
-            </article>
-            <article id="pop-up4" class="pop-up_inactive">
-                <h2>Leerdoel 3:</h2>
-                <p>Ik wil alleen gebruik van maken divs in mijn html als dat nodig is voor visuele elementen, zodat mijn websites beter werken voor screenreaders.</p>
-            </article>
-        </section>
+
+        <article popover id="pop-up1" class="popup-inner">
+            <h1 id="name"></h1>
+            <p id="age"></p>
+            <p id="interests"></p>
+        </article>
+        <article popover id="pop-up2" class="popup-inner">
+            <h2>Leerdoel 1:</h2>
+            <p>Ik wil mezelf verbeteren in het maken van animaties door gebruik van CSS, zodat ik mijn website er
+                interactiever en leuker uit kan laten zien.</p>
+        </article>
+        <article popover id="pop-up3" class="popup-inner">
+            <h2>Leerdoel 2:</h2>
+            <p>Ik wil mijn website correct responsive maken door gebruik van de juiste styling in CSS en waar mogelijk
+                zonder media queries, zodat mijn website er op alle schermen goed uit blijft zien.</p>
+        </article>
+        <article popover id="pop-up4" class="popup-inner">
+            <h2>Leerdoel 3:</h2>
+            <p>Ik wil alleen gebruik van maken divs in mijn html als dat nodig is voor visuele elementen, zodat mijn
+                websites beter werken voor screenreaders.</p>
+        </article>
+
 
         <section id="wii">
             <!--Power Button-->
@@ -63,16 +66,16 @@
 
             <!--Direction Buttons-->
             <section id="wii_direction_buttons">
-                <button id="BtnTop">
+                <button popovertarget="pop-up1" id="BtnTop">
                     <hr>
                 </button>
-                <button id="BtnLeft">
+                <button popovertarget="pop-up2" id="BtnLeft">
                     <hr>
                 </button>
-                <button id="BtnRight">
+                <button popovertarget="pop-up3" id="BtnRight">
                     <hr>
                 </button>
-                <button id="BtnBottom"  >
+                <button popovertarget="pop-up4" id="BtnBottom">
                     <hr>
                 </button>
             </section>
@@ -84,7 +87,7 @@
 
             <!--Center Buttons-->
             <section id="wii_center_buttons">
-                <audio id= "barrelSfx" src="Assets/sfx/rotateSFX.mp3"></audio>
+                <audio id="barrelSfx" src="Assets/sfx/rotateSFX.mp3"></audio>
 
                 <button id="BtnMinus">-</button>
                 <section>
@@ -159,7 +162,7 @@
 
 
 
-        <script src="scripts/script.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 
 </html>

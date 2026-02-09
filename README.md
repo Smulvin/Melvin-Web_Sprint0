@@ -36,14 +36,18 @@ https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not
 
 #### AI:
-Gevraagd of hij de volgende regels korter kon maken: <br>
-border-top: 2px solid var(--wii_button_border_color); <br>
-border-left: 2px solid var(--wii_button_border_color); <br>
-border-right: 2px solid var(--wii_button_border_color); <br>
+Gevraagd of hij de volgende regels korter kon maken:
+<code>
+border-top: 2px solid var(--wii_button_border_color); 
+border-left: 2px solid var(--wii_button_border_color); 
+border-right: 2px solid var(--wii_button_border_color);
+</code>
 
-Werd veranderd naar het volgende: <br>
-border: 2px solid var(--wii_button_border_color); <br>
+Werd veranderd naar het volgende: 
+<code>
+border: 2px solid var(--wii_button_border_color);
 border-bottom: none;
+</code>
 
 #### Daily Checkout met Dylan
 Toevallig werd ik gekoppeld met de persoon die naast me zat, dus wij hadden gedurende de dag al veel overlegd en gekeken naar elkaars werk, dus kon ik niet veel uit deze checkout halen.
@@ -71,6 +75,169 @@ Link naar pagina over pop over: https://developer.mozilla.org/en-US/docs/Web/HTM
 ## Week 2
 
 ### Maandag 9 februari
+Ben vandaag verder gegaan met de feedback die ik had gekregen uit de markt. Sanne had me verteld over het popover attribute. Ik heb hier naar gekeken en kon daardoor een groot deel van mijn javascript code weghalen. De pop-ups zelf werkend maken duurde 15 min. Er kwam hierdoor alleen wel een probleem met het positioneren van de popups. Omdat het nieuwe attribute het een position: fixed maakt, moest ik het centreren anders doen. Oorspronkelijk had ik het gedaan met position: absolute, maar dat werkte te hard met transform. Dit werkte weer niet vanwege mijn animaties omdat die ook transform gebruiken. Ik heb eerste de animaties uitgezet zodat ik eerst goed de positie kon regelen. Dat uitzoeken duurde ongeveer anderhalf uur. Ik ben toen eerst gaan werken aan de states van buttons. Ik wilde in ieder geval een pressed state toevoegen. Voor de A, - en + knop ging dit vrij gemakkelijk. Maar voor de D-Pad was dit een stuk moeilijker, ik probeer het eerst met een ~ selector, maar dit werkt alleen voor elementen die na het hoofdelement in de DOM komen, dus alleen de bovenste knop werkte goed. Ik heb daarna met wat hulp van ChatGPT het werkend gekregen. Ik gaf hem precies de uitleg van welke knoppen er moeten veranderen en welke op dezelfde manier veranderen. Later bleek dit toch iets anders te lopen. Maar het werkend krijgen van states van buttons duurde ongeveer 3 uur.
+
+#### Weggehaalde code
+<code>
+// =======================
+// Button references
+// =======================
+const btnTop = document.getElementById("BtnTop");
+const btnLeft = document.getElementById("BtnLeft");
+const btnRight = document.getElementById("BtnRight");
+const btnBottom = document.getElementById("BtnBottom");
+
+const buttons = [btnTop, btnLeft, btnRight, btnBottom];
+
+// =======================
+// Popup references
+// =======================
+const popUps = [
+  document.getElementById("pop-up1"),
+  document.getElementById("pop-up2"),
+  document.getElementById("pop-up3"),
+  document.getElementById("pop-up4"),
+];
+
+let activePopup = null;
+
+// =======================
+// Helper functions
+// =======================
+function hideAllPopups() {
+  popUps.forEach(popup => {
+    if (!popup) return;
+
+    popup.classList.remove("pop-up_active");
+    popup.classList.add("pop-up_inactive");
+  });
+
+  activePopup = null;
+}
+
+function togglePopup(popup) {
+  if (!popup) return;
+
+  // Same popup → close
+  if (activePopup === popup) {
+    popup.classList.remove("slide-fwd-left");
+    hideAllPopups();
+    return;
+  }
+
+  // Close others
+  hideAllPopups();
+
+  // Show popup
+  popup.classList.remove("pop-up_inactive");
+  popup.classList.add("pop-up_active");
+
+  if (popup.id === "pop-up1") {
+    popup.classList.remove("slide-fwd-top"); 
+    void popup.offsetWidth; 
+    popup.classList.add("slide-fwd-top");
+  }
+
+  if (popup.id === "pop-up2") {
+    popup.classList.remove("slide-fwd-left"); 
+    void popup.offsetWidth; 
+    popup.classList.add("slide-fwd-left");
+  }
+
+  if (popup.id === "pop-up3") {
+    popup.classList.remove("slide-fwd-right");
+    void popup.offsetWidth;
+    popup.classList.add("slide-fwd-right");
+  }
+
+  if (popup.id === "pop-up4") {
+    popup.classList.remove("slide-fwd-bottom");
+    void popup.offsetWidth;
+    popup.classList.add("slide-fwd-bottom");
+  }
+
+  activePopup = popup;
+}
+
+
+
+// =======================
+// Close popup when clicking outside
+// =======================
+document.addEventListener("click", (e) => {
+  if (!activePopup) return;
+
+  const clickedButton = buttons.some(btn => btn?.contains(e.target));
+  const clickedPopup = activePopup.contains(e.target);
+
+  if (!clickedButton && !clickedPopup) {
+    hideAllPopups();
+  }
+});
+</code>
+
+#### Geprobeerde code voor D-Pad states
+<code>
+    #BtnTop:active {
+        background: yellow;
+        
+        ~ #BtnRight,  ~ #BtnLeft {
+            background:red;
+        }
+
+        ~ #BtnBottom {
+            background:green;
+        }
+    }
+
+    /* Left button pressed */
+    #BtnLeft:active {
+        background: yellow;
+        
+        ~ #BtnTop, ~ #BtnBottom {
+            background:red;
+        }
+
+        ~ #BtnRight {
+            background:green;
+        }
+    }
+
+    /* Right button pressed */
+    #BtnRight:active {
+        background: yellow;
+        
+        ~ #BtnTop, ~ #BtnBottom {
+            background:red;
+        }
+
+        ~ #BtnLeft {
+            background:green;
+        }
+    }
+
+    /* Right button pressed */
+    #BtnBottom:active {
+        background: yellow;
+        
+        ~ #BtnLeft, ~ #BtnRight {
+            background:red;
+        }
+
+        ~ #BtnTop {
+            background:green;
+        }
+    }
+</code>
+
+<img src="Assets/img_readme/D-Pad_States.png">
+
+#### Bekeken websites van vandaag:
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/rotateX 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/scale
+
 
 ### Dinsdag 10 februari
 
