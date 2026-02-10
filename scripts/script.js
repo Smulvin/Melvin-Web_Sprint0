@@ -177,3 +177,8 @@ document.addEventListener("DOMContentLoaded", () => {
     showOtherPerson(newId);
   });
 });
+
+
+
+
+

@@ -238,8 +238,88 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-clas
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/rotateX 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/scale
 
-
 ### Dinsdag 10 februari
+Vandaag had ik eerst een workshop over typografie. Hier had ik de vraag naar wat basisregels voor typografie. Dus bijvoorbeeld hoeveel tekens op een regel en lettergrootte enzo. Hierin was het advies vooral om het soms een beetje aan te kijken of het er goed uitziet en eventueel dus meer line-spacing toe te voegen of de regels korter te maken. Maar dat de regel ongeveer 20 tot 40 keer de fontgrootte goed is, of 40 tot 80 tekens. Dat is het belangrijkste wat ik ervan had geleerd. Deze workshop duurde een uurtje. Daarna ging ik werken aan extra eis die we maandag kregen. Ik had hier wel ChatGPT om hulp gevraagd voor het API gedeelte. Ik had namelijk wat problemen met het inladen van de informatie op de juiste locatie. Zo had ik vooral hulp nodig in mijn standaard javascript. Want sommige ids van mensen werkten niet en had ik hulp nodig voor het randomizen van welk id je kreeg te zien. Ik wilde namelijk dat als je op de 1 of 2 klikt dat je een random id van een andere minor student krijgt en dat als je op 1 klikt dat hij 1 id naar beneden gaat en als je op 2 klikt dat hij 1 id omhoog gaat. Deze API dingen regelen duurde ongeveer 2 uur. De rest van de dag ben ik bezig geweest met een nieuwe mechanic voor mijn homebutton. Ik wilde dat als je op de button klikt dat bepaalde elementen met gravity vallen, maar dat ze nog steeds binnen het scherm liggen en dat je ermee kan spelen en dat ze nog steeds klikbaar zijn. Ik heb hier verschillende websites voor gebruikt. Uiteindelijk leerde ik over matter.js. Dit was een makkelijke manier om physics toe te voegen aan mijn website, maar ik kreeg het niet werkend zoals ik voor ogen had. Het maakte namelijk losse elementen op een canvas, maar het hield dus niet de styling die het al had. Het was flink lastig, maar misschien handig voor een ander project.
+
+<img src="Assets/img_readme/Matter_JS_proberen.png">
+
+
+#### Bekeken websites
+https://www.reddit.com/r/learnjavascript/comments/gp2t2h/how_to_add_gravity_to_elements/
+https://brm.io/matter-js/
+
+#### Geprobeerde code
+<code>
+// =======================
+// Home button gravity effect
+// =======================
+document.addEventListener('DOMContentLoaded', () => {
+    const homeBtn = document.getElementById('homeBtn');
+
+    homeBtn.addEventListener('click', () => {
+        // Prevent multiple initializations
+        if (window.gravityActivated) return;
+        window.gravityActivated = true;
+
+        const { Engine, Runner, Bodies, Composite, Events } = Matter;
+
+        // Create engine
+        const engine = Engine.create();
+        const world = engine.world;
+
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        // Get all elements with the gravity-target class
+        const gravityTargets = document.querySelectorAll('.gravity-target');
+
+        gravityTargets.forEach(elem => {
+            const rect = elem.getBoundingClientRect();
+
+            const body = Bodies.rectangle(
+                rect.left + rect.width / 2,
+                rect.top + rect.height / 2,
+                rect.width,
+                rect.height,
+                {
+                    restitution: 0.5, // bounce
+                    friction: 0.1,
+                    frictionAir: 0.02,
+                    inertia: Infinity // keeps them upright (optional)
+                }
+            );
+
+            elem._matterBody = body;
+            Composite.add(world, body);
+        });
+
+        // Invisible walls to keep elements inside viewport
+        const thickness = 100;
+        const walls = [
+            Bodies.rectangle(width / 2, -thickness / 2, width, thickness, { isStatic: true }),
+            Bodies.rectangle(width / 2, height + thickness / 2, width, thickness, { isStatic: true }),
+            Bodies.rectangle(-thickness / 2, height / 2, thickness, height, { isStatic: true }),
+            Bodies.rectangle(width + thickness / 2, height / 2, thickness, height, { isStatic: true })
+        ];
+        Composite.add(world, walls);
+
+        // Run the physics engine
+        const runner = Runner.create();
+        Runner.run(runner, engine);
+
+        // Move the actual HTML elements according to physics bodies
+        Events.on(engine, 'afterUpdate', () => {
+            gravityTargets.forEach(elem => {
+                const body = elem._matterBody;
+                elem.style.position = 'absolute';
+                elem.style.left = `${body.position.x - body.bounds.max.x + body.bounds.min.x + (body.bounds.max.x - body.bounds.min.x)/2}px`;
+                elem.style.top = `${body.position.y - body.bounds.max.y + body.bounds.min.y + (body.bounds.max.y - body.bounds.min.y)/2}px`;
+                elem.style.transform = `rotate(${body.angle}rad)`; // remove this line if you want to prevent rotation
+            });
+        });
+    });
+});
+</code>
 
 ### Woensdag 11 februari
 

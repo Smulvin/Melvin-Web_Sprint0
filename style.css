@@ -39,15 +39,12 @@ body {
     background: var(--background);
     width: 100vw;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
 }
 
 body.dark-mode {
     --wii_color: #2c3033;
     --wii_color-text: #ffffff;
+    --wii_button_border_color_dark: #393939;
 }
 
 main {
@@ -422,6 +419,10 @@ article[popover] {
 
 #pop-up5 {
     top: 25%;
+
+    p:first-of-type {
+        word-break: break-all;
+    }
 }
 
 /*********************/
