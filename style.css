@@ -58,6 +58,7 @@ main {
     align-items: center;
 }
 
+
 /******************/
 /* Wii controller */
 /******************/
@@ -173,6 +174,7 @@ main {
 }
 
 /* Pressed states using group classes */
+/* Selectors opgezet door ChatGPT, properties zelf ingevuld */
 /* Top Button */
 #wii_direction_buttons.top-pressed #BtnTop {transform: rotateX(22.5deg);}
 #wii_direction_buttons.top-pressed #BtnLeft {filter: drop-shadow(0 4px 0 var(--wii_button_border_color_dark)); transform: rotateX(22.5deg); margin-top: -2px;}
@@ -180,13 +182,13 @@ main {
 #wii_direction_buttons.top-pressed #BtnBottom {filter: drop-shadow(0 6px 0 var(--wii_button_border_color_dark)); transform: rotateX(-45deg); margin-top: -4px;}
 
 /* Left Button */
-#wii_direction_buttons.left-pressed #BtnLeft {transform: rotateY(-30deg) }
+#wii_direction_buttons.left-pressed #BtnLeft {transform: rotateY(-30deg);}
 #wii_direction_buttons.left-pressed #BtnTop {filter: drop-shadow(4px 0 0 var(--wii_button_border_color_dark)); transform:rotateY(22.5deg); margin-left: -2px;}
 #wii_direction_buttons.left-pressed #BtnBottom {filter: drop-shadow(4px 2px 0 var(--wii_button_border_color_dark)); transform:rotateY(22.5deg); margin-left: -2px; }
 #wii_direction_buttons.left-pressed #BtnRight {transform: rotateY(-30deg); filter: drop-shadow(3px 2px 0 var(--wii_button_border_color_dark));  margin-left: -4px;}
 
 /* Right Button */
-#wii_direction_buttons.right-pressed #BtnRight {transform: rotateY(-22.5deg) }
+#wii_direction_buttons.right-pressed #BtnRight {transform: rotateY(-22.5deg);}
 #wii_direction_buttons.right-pressed #BtnTop { filter: drop-shadow(-4px 0 var(--wii_button_border_color_dark)); transform:rotateY(-22.5deg); margin-right: -2px;}
 #wii_direction_buttons.right-pressed #BtnBottom { filter: drop-shadow(-4px 2px 0 var(--wii_button_border_color_dark)); transform:rotateY(-22.5deg); margin-right: -2px;}
 #wii_direction_buttons.right-pressed #BtnLeft {transform: rotateY(30deg); filter: drop-shadow(-3px 2px 0 var(--wii_button_border_color_dark)); margin-right: -4px;}
@@ -278,7 +280,7 @@ main {
         color: var(--wii_color-text);
     }
 
-    button:active {
+    >button:active{
         filter: inner-shadow(0 0 0px var(--wii_button_border_color_dark));
         transform: translateY(2px);
     }
@@ -331,6 +333,11 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    button:active {
+        filter: inner-shadow(0 0 0px var(--wii_button_border_color_dark));
+        transform: translateY(2px);
+    }
 }
 
 
@@ -343,7 +350,6 @@ main {
     filter: var(--wii_button_shadow);
     background: var(--wii_color);
     color: var(--wii_color-text);
-
 }
 
 /*****************/
@@ -374,6 +380,7 @@ main {
 #wii_text {
     margin-top: 5px;
     font-size: 20px;
+    font-weight: bold;
 }
 
 /***********/
@@ -382,7 +389,7 @@ main {
 
 
 .popup-inner {
-    width: 20em;
+    width: 100%;
     background: var(--wii_color);
     color: var(--wii_color-text);
     border: 5px solid var(--wii_button_border_color);
@@ -391,6 +398,7 @@ main {
     font-family: var(--wii_font);
     filter: drop-shadow(0 1em 0.5em var(--wii_button_border_color_dark));
     padding: 1em;
+    overflow: hidden;
 
     p {
         margin-top: 1em;
@@ -400,7 +408,7 @@ main {
         list-style: none;
     }
 
-    @media (width > 40em) {
+    @media (width > 30em) {
         width: 30em;
     }
 }
@@ -412,6 +420,9 @@ article[popover] {
     transform: translate(-50%, -50%);
 }
 
+#pop-up5 {
+    top: 25%;
+}
 
 /*********************/
 /* Pop-up Animations */

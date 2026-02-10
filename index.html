@@ -105,9 +105,10 @@
 
                 <button id="BtnMinus">-</button>
                 <section>
-                    <button>
+                    <button id="homeBtn">
                         <i class="fa-solid fa-house"></i>
                     </button>
+                   <!--  Idee om elk element te laten valle, hele controller breekt. -->
                     <p>Home</p>
                 </section>
                 <button id="BtnPlus">+</button>
@@ -151,11 +152,33 @@
 
             <!--1 / 2 Buttons-->
             <section id="wii_1_2_buttons">
-                <button>1</button>
-                <button>2</button>
+                <button id="Btn1">1</button>
+                <button id="Btn2">2</button>
             </section>
 
+            <article popover id="pop-up5" class="popup-inner">
+                <h2 id="otherName"></h2>
+
+                <p>
+                    <strong>Nickname:</strong>
+                    <span id="otherNickname"></span>
+                </p>
+
+                <p>
+                    <strong>Birthdate:</strong>
+                    <span id="otherBirthdate"></span>
+                </p>
+
+                <p>
+                    <strong>Favorite game:</strong>
+                    <span id="otherFavGame"></span>
+                </p>
+
+            </article>
+
+
             <!--Player Lights-->
+            <!-- Als je op de toetsen van 1 t/m 4 klikt veranderen de lampjes-->
             <section id="wii_player_lights">
                 <div></div>
                 <div></div>
@@ -169,7 +192,6 @@
             </section>
 
         </section>
-
     </main>
 
 

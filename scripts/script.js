@@ -115,6 +115,65 @@ Object.keys(buttons).forEach(id => {
   btn.addEventListener("mouseleave", removePressedClasses);
 });
 
+// =======================
+// 1 / 2 Buttons for POP-UP5
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  const btn1 = document.getElementById("Btn1");
+  const btn2 = document.getElementById("Btn2");
+  const popup = document.getElementById("pop-up5");
 
+  if (!btn1 || !btn2 || !popup) return;
 
+  let currentOtherId = null; // Tracks the currently shown ID
+  let popupActive = false;    // Tracks if popup is open
 
+  // IDs to skip (cause errors or are yourself)
+  const excludedIds = [310, 281, 282, 294, 317, 319, 323];
+
+  // Additional IDs to include in the mix
+  const additionalIds = [69, 71, 72, 228];
+
+  // Allowed IDs for random or cycling
+  const allowedIds = [
+    ...Array.from({ length: 325 - 279 + 1 }, (_, i) => i + 279), // 279–325
+    ...additionalIds,
+  ].filter(id => !excludedIds.includes(id)); // only remove excluded ones
+
+  function getRandomId() {
+    const index = Math.floor(Math.random() * allowedIds.length);
+    return allowedIds[index];
+  }
+
+  function getNextId(currentId) {
+    let index = allowedIds.indexOf(currentId);
+    if (index === -1) index = 0; // fallback
+    index = (index + 1) % allowedIds.length;
+    return allowedIds[index];
+  }
+
+  function getPrevId(currentId) {
+    let index = allowedIds.indexOf(currentId);
+    if (index === -1) index = 0; // fallback
+    index = (index - 1 + allowedIds.length) % allowedIds.length;
+    return allowedIds[index];
+  }
+
+  function showOtherPerson(id) {
+    currentOtherId = id; // update current ID
+    popupActive = true;  // mark popup as active
+    loadOtherPerson(id);
+    popup.showPopover();
+    console.log("Showing other person ID:", id);
+  }
+
+  btn1.addEventListener("click", () => {
+    const newId = popupActive && currentOtherId !== null ? getPrevId(currentOtherId) : getRandomId();
+    showOtherPerson(newId);
+  });
+
+  btn2.addEventListener("click", () => {
+    const newId = popupActive && currentOtherId !== null ? getNextId(currentOtherId) : getRandomId();
+    showOtherPerson(newId);
+  });
+});

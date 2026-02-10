@@ -1,39 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const apiURL = "https://fdnd.directus.app/items/person/310";
+  const API_BASE = "https://fdnd.directus.app/items/person/";
 
-  const nameEl = document.getElementById("name");
-  const nicknameEl = document.getElementById("nickname");
-  const birthdateEl = document.getElementById("birthdate");
-  const gamesEl = document.getElementById("favoriteGames");
+  // ----------------------------
+  // POP-UP 1 — YOU (ID 310)
+  // ----------------------------
+  loadYourProfile();
 
-  if (!nameEl || !nicknameEl || !birthdateEl || !gamesEl) return;
-
-  fetch(apiURL)
-    .then(res => res.json())
-    .then(json => {
+  async function loadYourProfile() {
+    try {
+      const res = await fetch(`${API_BASE}310`);
+      const json = await res.json();
       if (!json?.data) return;
 
       const data = json.data;
 
-      // Basic info
-      nameEl.textContent = data.name;
-      nicknameEl.textContent = data.nickname ?? "—";
-      birthdateEl.textContent = data.birthdate ?? "—";
+      document.getElementById("name").textContent = data.name ?? "—";
+      document.getElementById("nickname").textContent = data.nickname ?? "—";
+      document.getElementById("birthdate").textContent = data.birthdate ?? "—";
 
-      // Parse custom JSON
+      const gamesEl = document.getElementById("favoriteGames");
+      gamesEl.innerHTML = "";
+
       let custom = {};
       try {
         custom = JSON.parse(data.custom);
-      } catch (e) {
-        console.error("Custom JSON parse failed", e);
-      }
+      } catch {}
 
-      const games = custom.favoriteGames;
-
-      if (Array.isArray(games) && games.length) {
+      if (Array.isArray(custom.favoriteGames)) {
         const ul = document.createElement("ul");
 
-        games.forEach(game => {
+        custom.favoriteGames.forEach(game => {
           const li = document.createElement("li");
           li.textContent = `${game.title} — ${game.platform} (${game.releaseYear})`;
           ul.appendChild(li);
@@ -43,6 +39,34 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         gamesEl.textContent = "No favorite games listed.";
       }
-    })
-    .catch(err => console.error("Fetch error:", err));
+
+    } catch (err) {
+      console.error("Fetch error (you):", err);
+    }
+  }
+
+  // ----------------------------
+  // POP-UP 2 — OTHER PEOPLE
+  // ----------------------------
+  window.loadOtherPerson = async function (id) {
+    console.log("Other person ID chosen:", id);
+
+    try {
+      const res = await fetch(`${API_BASE}${id}`);
+      const json = await res.json();
+      if (!json?.data) return;
+
+      const data = json.data;
+
+      document.getElementById("otherName").textContent = data.name ?? "—";
+      document.getElementById("otherNickname").textContent = data.nickname ?? "—";
+      document.getElementById("otherBirthdate").textContent = data.birthdate ?? "—";
+
+      const favGameEl = document.getElementById("otherFavGame");
+      favGameEl.textContent = data.fav_game ?? "No favorite game listed.";
+
+    } catch (err) {
+      console.error("Fetch error (other):", err);
+    }
+  };
 });
