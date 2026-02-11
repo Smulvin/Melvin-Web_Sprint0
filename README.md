@@ -328,6 +328,13 @@ Ik had vandaag een check-out samen emt Sabrina. Zij had een soort paspoortje waa
 
 ### Woensdag 11 februari
 
+lampje aanpassen aan de hand van favkleur van speler uit api
+code netter
+popup animatietje
+player light wisselen adhv numpad
+shake animatie op home knop + sfx
+font beter toegevoegd
+
 #### Code review met Lisa
 Uit de code review kwam vooral dat ik soms mijn naamgeving wel wat er beter kan doen, niet alleen gebruik ik niet vaak kebab-case voor mijn classes en ids, maar zijn niet alle namen allemaal even duidelijk. In mijn HTML en mijn CSS. In mijn JavaScript specifiek moet ik even consistent worden in wanneer ik wel of niet een ; ga doen.
 

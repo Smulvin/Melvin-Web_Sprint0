@@ -41,11 +41,11 @@
     --wii-button-shadow: drop-shadow(0 2px 0px var(--wii-button-border-color-shadow));
     --wii-font: 'Jost', sans-serif;
 
-    @media (prefers-color-scheme:dark) {
+/*     @media (prefers-color-scheme:dark) {
         --wii-color: #2c3033;
         --wii-color-text: #ffffff;
-        --wii-button-border-color-shadow: #393939;
-    }
+        --wii-button-border-color-shadow: #1e1e1e;
+    } */
 }
 
 body {
@@ -57,7 +57,15 @@ body {
 body.dark-mode {
     --wii-color: #2c3033;
     --wii-color-text: #ffffff;
-    --wii-button-border-color-shadow: #393939;
+    --wii-button-border-color-shadow: #1e1e1e;
+    --wii-button-shadow: drop-shadow(0 2px 0px var(--wii-button-border-color-shadow));
+}
+
+body.light-mode {
+    --wii-color: #efefef;
+    --wii-color-text: #000000;
+    --wii-button-border-color-shadow: #a7a7a7;
+    --wii-button-shadow: drop-shadow(0 2px 0px var(--wii-button-border-color-shadow));
 }
 
 main {

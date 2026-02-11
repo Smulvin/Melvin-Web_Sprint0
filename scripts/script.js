@@ -64,9 +64,20 @@ Object.keys(buttons).forEach(id => {
 
 const aBtn = document.getElementById("button-a")
 
+// Detect system preference
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+
+// Set initial mode
+if (prefersDark) {
+  document.body.classList.add("dark-mode")
+} else {
+  document.body.classList.add("light-mode")
+}
+
+// Toggle between modes
 aBtn.addEventListener("click", () => {
-  console.log("Dark mode toggled")
   document.body.classList.toggle("dark-mode")
+  document.body.classList.toggle("light-mode")
 })
 
 // =======================
@@ -223,6 +234,10 @@ document.addEventListener("DOMContentLoaded", () => {
     showOtherPerson(newId)
   })
 })
+
+// =======================
+// Player Lights
+// =======================
 
 // Changing lights according to fav_color in API
 document.addEventListener("DOMContentLoaded", () => {
