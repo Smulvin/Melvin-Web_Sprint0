@@ -30,169 +30,175 @@
     -->
 
     <main>
-
-        <article popover id="pop-up1" class="popup-inner">
-            <h1 id="name"></h1>
-
-            <p>
-                <strong>Nickname:</strong>
-                <span id="nickname"></span>
-            </p>
-
-            <p>
-                <strong>Date of birth:</strong>
-                <span id="birthdate"></span>
-            </p>
-
-            <p>
-                <strong>Favorite games:</strong>
-            </p>
-            <div id="favoriteGames"></div>
-        </article>
-
-        <article popover id="pop-up2" class="popup-inner">
-            <h2>Leerdoel 1:</h2>
-            <p>Ik wil mezelf verbeteren in het maken van animaties door gebruik van CSS, zodat ik mijn website er
-                interactiever en leuker uit kan laten zien.</p>
-        </article>
-        <article popover id="pop-up3" class="popup-inner">
-            <h2>Leerdoel 2:</h2>
-            <p>Ik wil mijn website correct responsive maken door gebruik van de juiste styling in CSS en waar mogelijk
-                zonder media queries, zodat mijn website er op alle schermen goed uit blijft zien.</p>
-        </article>
-        <article popover id="pop-up4" class="popup-inner">
-            <h2>Leerdoel 3:</h2>
-            <p>Ik wil alleen gebruik van maken divs in mijn html als dat nodig is voor visuele elementen, zodat mijn
-                websites beter werken voor screenreaders.</p>
-        </article>
+        <div id="shake-animation-div">
 
 
-        <section id="wii">
-            <!--Power Button-->
-            <section id="wii_power_container">
-                <button id="closeBtn">
-                    <i class="fa-solid fa-power-off"></i>
-                </button>
-                <!--Source: https://www.youtube.com/shorts/Wu71oHDVmNc -->
-                <audio id="closeSfx" src="Assets/sfx/closeSFX.mp3"></audio>
-                <p>Power</p>
-            </section>
-
-
-            <!--Direction Buttons-->
-            <section id="wii_direction_buttons">
-                <button popovertarget="pop-up1" id="BtnTop">
-                    <hr>
-                </button>
-                <button popovertarget="pop-up2" id="BtnLeft">
-                    <hr>
-                </button>
-                <button popovertarget="pop-up3" id="BtnRight">
-                    <hr>
-                </button>
-                <button popovertarget="pop-up4" id="BtnBottom">
-                    <hr>
-                </button>
-            </section>
-
-            <!--A Button-->
-            <section id="wii_A_button">
-                <button id="BtnA">A</button>
-            </section>
-
-            <!--Center Buttons-->
-            <section id="wii_center_buttons">
-                <audio id="barrelSfx" src="Assets/sfx/rotateSFX.mp3"></audio>
-
-                <button id="BtnMinus">-</button>
-                <section>
-                    <button id="homeBtn">
-                        <i class="fa-solid fa-house"></i>
-                    </button>
-                   <!--  Idee om elk element te laten valle, hele controller breekt. -->
-                    <p>Home</p>
-                </section>
-                <button id="BtnPlus">+</button>
-            </section>
-
-            <!--Sound holes-->
-            <section id="wii_sound_holes">
-                <section class="wii_hole_small">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </section>
-                <section class="wii_hole_medium">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </section>
-                <section class="wii_hole_big">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </section>
-                <section class="wii_hole_big">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </section>
-                <section class="wii_hole_medium">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </section>
-                <section class="wii_hole_small">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </section>
-
-
-            </section>
-
-            <!--1 / 2 Buttons-->
-            <section id="wii_1_2_buttons">
-                <button id="Btn1">1</button>
-                <button id="Btn2">2</button>
-            </section>
-
-            <article popover id="pop-up5" class="popup-inner">
-                <h2 id="otherName"></h2>
+            <article popover id="pop-up-me" class="popup-inner">
+                <h1 id="name"></h1>
 
                 <p>
                     <strong>Nickname:</strong>
-                    <span id="otherNickname"></span>
+                    <span id="nickname"></span>
                 </p>
 
                 <p>
-                    <strong>Birthdate:</strong>
-                    <span id="otherBirthdate"></span>
+                    <strong>Date of birth:</strong>
+                    <span id="birthdate"></span>
                 </p>
 
                 <p>
-                    <strong>Favorite game:</strong>
-                    <span id="otherFavGame"></span>
+                    <strong>Favorite games:</strong>
                 </p>
+                <div id="favorite-games"></div>
+            </article>
 
+            <article popover id="pop-up-ld1" class="popup-inner">
+                <h2>Leerdoel 1:</h2>
+                <p>Ik wil mezelf verbeteren in het maken van animaties door gebruik van CSS, zodat ik mijn website er
+                    interactiever en leuker uit kan laten zien.</p>
+            </article>
+            <article popover id="pop-up-ld2" class="popup-inner">
+                <h2>Leerdoel 2:</h2>
+                <p>Ik wil mijn website correct responsive maken door gebruik van de juiste styling in CSS en waar
+                    mogelijk
+                    zonder media queries. Zodat mijn website er op alle schermen goed uit blijft zien.</p>
+            </article>
+            <article popover id="pop-up-ld3" class="popup-inner">
+                <h2>Leerdoel 3:</h2>
+                <p>Ik wil alleen gebruik van maken van divs in mijn html als dat nodig is voor visuele elementen, zodat
+                    mijn
+                    websites beter werken voor screenreaders.</p>
             </article>
 
 
-            <!--Player Lights-->
-            <!-- Als je op de toetsen van 1 t/m 4 klikt veranderen de lampjes-->
-            <section id="wii_player_lights">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </section>
+            <section id="wii">
+                <!--Power Button-->
+                <section id="wii-power-container">
+                    <button id="close-button">
+                        <i class="fa-solid fa-power-off"></i>
+                    </button>
+                    <!--Source: https://www.youtube.com/shorts/Wu71oHDVmNc -->
+                    <audio id="close-sfx" src="Assets/sfx/closeSFX.mp3"></audio>
+                    <p>Power</p>
+                </section>
 
-            <!--Wii Text-->
-            <section id="wii_text">
-                <p>Wii</p>
-            </section>
 
-        </section>
+                <!--Direction Buttons-->
+                <section id="wii-direction-buttons">
+                    <button popovertarget="pop-up-me" id="button-top">
+                        <hr>
+                    </button>
+                    <button popovertarget="pop-up-ld1" id="button-left">
+                        <hr>
+                    </button>
+                    <button popovertarget="pop-up-ld2" id="button-right">
+                        <hr>
+                    </button>
+                    <button popovertarget="pop-up-ld3" id="button-bottom">
+                        <hr>
+                    </button>
+                </section>
+
+                <!--A Button-->
+                <section id="wii-a-button">
+                    <button id="button-a">A</button>
+                </section>
+
+                <!--Center Buttons-->
+                <section id="wii-center-buttons">
+                    <!-- Source: https://www.youtube.com/watch?v=psc_A0bUgSQ-->
+                    <audio id="barrel-sfx" src="Assets/sfx/rotateSFX.mp3"></audio>
+
+                    <button id="button-minus">-</button>
+                    <section>
+                        <!-- Source: https://www.youtube.com/watch?v=P1gJJqYXpTc-->
+                        <audio id="shake-sfx" src="Assets/sfx/shakeSFX.mp3"></audio>
+                        <button id="home-button">
+                            <i class="fa-solid fa-house"></i>
+                        </button>
+                        <!--  Idee om elk element te laten valle, hele controller breekt. -->
+                        <p>Home</p>
+                    </section>
+                    <button id="button-plus">+</button>
+                </section>
+
+                <!--Sound holes-->
+                <section id="wii-sound-holes">
+                    <section class="wii-hole-small">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </section>
+                    <section class="wii-hole-medium">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </section>
+                    <section class="wii-hole-big">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </section>
+                    <section class="wii-hole-big">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </section>
+                    <section class="wii-hole-medium">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </section>
+                    <section class="wii-hole-small">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </section>
+                </section>
+
+                <!--1 / 2 Buttons-->
+                <section id="wii-1-2-buttons">
+                    <button id="button-1">1</button>
+                    <button id="button-2">2</button>
+                </section>
+
+                <article popover id="pop-up-other" class="popup-inner">
+                    <h2 id="other-name"></h2>
+
+                    <p>
+                        <strong>Nickname:</strong>
+                        <span id="other-nickname"></span>
+                    </p>
+
+                    <p>
+                        <strong>Birthdate:</strong>
+                        <span id="other-birthdate"></span>
+                    </p>
+
+                    <p>
+                        <strong>Favorite game:</strong>
+                        <span id="other-fav-game"></span>
+                    </p>
+
+                </article>
+
+
+                <!--Player Lights-->
+                <!-- Als je op de toetsen van 1 t/m 4 klikt veranderen de lampjes-->
+                <section id="wii-player-lights">
+                    <div id="player-light"></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </section>
+
+                <!--Wii Text-->
+                <section id="wii-text">
+                    <p>Wii</p>
+                </section>
+
+            </section>
+        </div>
     </main>
 
 

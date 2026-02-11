@@ -322,9 +322,17 @@ document.addEventListener('DOMContentLoaded', () => {
 </code>
 
 #### Checkout met Sabrina
-Ik had vandaag een check-out samen emt Sabrina. Zij had een soort paspoortje waar vooral veel animatie in zat. Zelf wilde ik ook meer met animatie doen dus het was leuk om te kijken wat iemand er anders er al mee had gedaan. Daar heb ik inspiratie uit kunnen nemen. Voor de rest heb ik zelf verteld over hoe ik met matter.js heb geoefend, maar het denk ik toch later niet ga gebruiken. Het werkte namelijk toch niet helemaal lekker voor mijn project. Morgen ga ik werken aan de laatste puntjes op de I en ga ik mijn homeButton nog een andere functionaliteit geven, het liefst met meer animatie. Voor de rest ga ik toch nog even kijken of het mogelijk is om mijn pop-ups te animeren. Het zou namelijk kunnen zijn dat het niet werkte door code op mijn body die overbodig was, ga ik morgen naar kijken.
+Ik had vandaag een check-out samen emt Sabrina. Zij had een soort paspoortje waar vooral veel animatie in zat. Zelf wilde ik ook meer met animatie doen dus het was leuk om te kijken wat iemand er anders er al mee had gedaan. Daar heb ik inspiratie uit kunnen nemen. Voor de rest heb ik zelf verteld over hoe ik met matter.js heb geoefend, maar het denk ik toch later niet ga gebruiken. Het werkte namelijk toch niet helemaal lekker voor mijn project. Morgen ga ik werken aan de laatste puntjes op de I en ga ik mijn homeButton nog een andere functionaliteit geven, het liefst met meer animatie. Voor de rest ga ik toch nog even kijken of het mogelijk is om mijn pop-ups te animeren. Het zou namelijk kunnen zijn dat het niet werkte door code op mijn body die overbodig was, ga ik morgen naar kijken. Morgen ga dus werken aan die animaties, ga ik een nieuwe mechaniek/animatie toevoegen aan de home knop en wil ik nog wat kleine dingetjes toevoegen. Zo zag ik bij Dylan hoe hij de favColor uit de API gebruikte om zijn speler te veranderen, ik kan waarschijnlijk hetzelfde doen met het lampje op mijn controller. Ook wilde ik kijken of ik nog een klein dingetje kon toevoegen dat je misschien niet standaard zou vinden op de website.
+
+
 
 ### Woensdag 11 februari
+
+#### Code review met Lisa
+Uit de code review kwam vooral dat ik soms mijn naamgeving wel wat er beter kan doen, niet alleen gebruik ik niet vaak kebab-case voor mijn classes en ids, maar zijn niet alle namen allemaal even duidelijk. In mijn HTML en mijn CSS. In mijn JavaScript specifiek moet ik even consistent worden in wanneer ik wel of niet een ; ga doen.
+
+#### Bekeken websites
+https://blog.logrocket.com/animating-dialog-popover-elements-css-starting-style/
 
 ### Donderdag 12 februari
 Vandaag om 10.00 is de deadline

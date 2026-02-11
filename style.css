@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Goblin+One&family=Jost:ital,wght@0,100..900;1,100..900&family=Rye&family=Space+Grotesk:wght@300..700&display=swap');
+@font-face {
+    font-family: "Jost";
+    src:url("/Assets/fonts/Jost-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "JostBold";
+    src:url("Assets/fonts/Jost-SemiBold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
 
 * {
     margin: 0;
@@ -14,24 +26,26 @@
 
     /* Kleurenpalet wii controller wit:  https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1146475106.jpg */
     /* Kleurenpalet wii controller zwart: https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1674897526.jpg */
-    --wii_color: #efefef;
-    --wii_color-text: #000000;
+    --wii-color: #efefef;
+    --wii-color-text: #000000;
+    --wii-button-border-color-shadow: #a7a7a7;
 
-    --wii_red_power: #c19095;
-    --wii_controller_blue: #1d95ba;
-    --wii_button_border_color: #c4c7cc;
-    --wii_button_border_color_dark: #a7a7a7;
-    --wii_light_off: #67686c;
-    --wii_controller_width: 100px;
-    --wii_controller_height: 442px;
 
-    --wii_button_shadow: drop-shadow(0 2px 0px var(--wii_button_border_color_dark));
-    --wii_font: 'Jost', sans-serif;
+    --wii-red-power: #c19095;
+    --wii-controller-blue: #1d95ba;
+    --wii-controller-light: #1d95ba;;
+    --wii-button-border-color: #c4c7cc;
+    --wii-light-off: #67686c;
+    --wii-controller-width: 100px;
+    --wii-controller-height: 442px;
+
+    --wii-button-shadow: drop-shadow(0 2px 0px var(--wii-button-border-color-shadow));
+    --wii-font: 'Jost', sans-serif;
 
     @media (prefers-color-scheme:dark) {
-        --wii_color: #2c3033;
-        --wii_color-text: #ffffff;
-        --wii_button_border_color_dark: #393939;
+        --wii-color: #2c3033;
+        --wii-color-text: #ffffff;
+        --wii-button-border-color-shadow: #393939;
     }
 }
 
@@ -42,9 +56,15 @@ body {
 }
 
 body.dark-mode {
-    --wii_color: #2c3033;
-    --wii_color-text: #ffffff;
-    --wii_button_border_color_dark: #393939;
+    --wii-color: #2c3033;
+    --wii-color-text: #ffffff;
+    --wii-button-border-color-shadow: #393939;
+}
+
+body.light-mode {
+    --wii-color: #efefef;
+    --wii-color-text: #000000;
+    --wii-button-border-color-shadow: #a7a7a7;
 }
 
 main {
@@ -62,10 +82,10 @@ main {
 
 /* Wii dimensions: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNw2Ip8d8CU5oWvMjqvJO2AsS2SEM0ilbTA&s */
 #wii {
-    background-color: var(--wii_color);
-    color: var(--wii_color-text);
-    width: var(--wii_controller_width);
-    height: var(--wii_controller_height);
+    background-color: var(--wii-color);
+    color: var(--wii-color-text);
+    width: var(--wii-controller-width);
+    height: var(--wii-controller-height);
     border-radius: 10px;
     position: relative;
     display: flex;
@@ -89,7 +109,7 @@ main {
 /****************/
 /* Power Button */
 /****************/
-#wii_power_container {
+#wii-power-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,12 +118,12 @@ main {
     left: 5px;
 
     button {
-        color: var(--wii_red_power);
-        border: 1px solid var(--wii_button_border_color);
+        color: var(--wii-red-power);
+        border: 1px solid var(--wii-button-border-color);
         border-radius: 50%;
         padding: 2px;
         aspect-ratio: 1/1;
-        background: var(--wii_color);
+        background: var(--wii-color);
     }
 
     p {
@@ -115,7 +135,7 @@ main {
 /*********/
 /* D-Pad */
 /*********/
-#wii_direction_buttons {
+#wii-direction-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -123,45 +143,45 @@ main {
 
     button:nth-of-type(1) {
         grid-area: 1 / 2;
-        border: 2px solid var(--wii_button_border_color);
+        border: 2px solid var(--wii-button-border-color);
         border-bottom: none;
         aspect-ratio: 1/1;
         width: 20px;
-        background: var(--wii_color);
+        background: var(--wii-color);
     }
 
     button:nth-of-type(2) {
         grid-row: 2;
         grid-column: 1;
-        border: 2px solid var(--wii_button_border_color);
+        border: 2px solid var(--wii-button-border-color);
         border-right: none;
-        filter: var(--wii_button_shadow);
-        background: var(--wii_color);
+        filter: var(--wii-button-shadow);
+        background: var(--wii-color);
     }
 
     button:nth-of-type(3) {
         grid-row: 2;
         grid-column: 3;
-        border: 2px solid var(--wii_button_border_color);
+        border: 2px solid var(--wii-button-border-color);
         border-left: none;
-        filter: var(--wii_button_shadow);
-        background: var(--wii_color);
+        filter: var(--wii-button-shadow);
+        background: var(--wii-color);
     }
 
     button:nth-of-type(4) {
         grid-row: 3;
         grid-column: 2;
-        border: 2px solid var(--wii_button_border_color);
+        border: 2px solid var(--wii-button-border-color);
         border-top: none;
-        filter: var(--wii_button_shadow);
-        background: var(--wii_color);
+        filter: var(--wii-button-shadow);
+        background: var(--wii-color);
     }
 
     hr {
         margin: 2px;
         height: 3px;
         border: none;
-        background-color: var(--wii_button_border_color);
+        background-color: var(--wii-button-border-color);
     }
 
     button:first-of-type hr,
@@ -173,52 +193,50 @@ main {
 /* Pressed states using group classes */
 /* Selectors opgezet door ChatGPT, properties zelf ingevuld */
 /* Top Button */
-#wii_direction_buttons.top-pressed #BtnTop {transform: rotateX(22.5deg);}
-#wii_direction_buttons.top-pressed #BtnLeft {filter: drop-shadow(0 4px 0 var(--wii_button_border_color_dark)); transform: rotateX(22.5deg); margin-top: -2px;}
-#wii_direction_buttons.top-pressed #BtnRight {filter: drop-shadow(0 4px 0 var(--wii_button_border_color_dark)); transform: rotateX(22.5deg); margin-top: -2px;}
-#wii_direction_buttons.top-pressed #BtnBottom {filter: drop-shadow(0 6px 0 var(--wii_button_border_color_dark)); transform: rotateX(-45deg); margin-top: -4px;}
+#wii-direction-buttons.top-pressed #button-top {transform: rotateX(22.5deg);}
+#wii-direction-buttons.top-pressed #button-left {filter: drop-shadow(0 4px 0 var(--wii-button-border-color-shadow)); transform: rotateX(22.5deg); margin-top: -2px;}
+#wii-direction-buttons.top-pressed #button-right {filter: drop-shadow(0 4px 0 var(--wii-button-border-color-shadow)); transform: rotateX(22.5deg); margin-top: -2px;}
+#wii-direction-buttons.top-pressed #button-bottom {filter: drop-shadow(0 6px 0 var(--wii-button-border-color-shadow)); transform: rotateX(-45deg); margin-top: -4px;}
 
 /* Left Button */
-#wii_direction_buttons.left-pressed #BtnLeft {transform: rotateY(-30deg);}
-#wii_direction_buttons.left-pressed #BtnTop {filter: drop-shadow(4px 0 0 var(--wii_button_border_color_dark)); transform:rotateY(22.5deg); margin-left: -2px;}
-#wii_direction_buttons.left-pressed #BtnBottom {filter: drop-shadow(4px 2px 0 var(--wii_button_border_color_dark)); transform:rotateY(22.5deg); margin-left: -2px; }
-#wii_direction_buttons.left-pressed #BtnRight {transform: rotateY(-30deg); filter: drop-shadow(3px 2px 0 var(--wii_button_border_color_dark));  margin-left: -4px;}
+#wii-direction-buttons.left-pressed #button-left {transform: rotateY(-30deg);}
+#wii-direction-buttons.left-pressed #button-top {filter: drop-shadow(4px 0 0 var(--wii-button-border-color-shadow)); transform:rotateY(22.5deg); margin-left: -2px;}
+#wii-direction-buttons.left-pressed #button-bottom {filter: drop-shadow(4px 2px 0 var(--wii-button-border-color-shadow)); transform:rotateY(22.5deg); margin-left: -2px; }
+#wii-direction-buttons.left-pressed #button-right {transform: rotateY(-30deg); filter: drop-shadow(3px 2px 0 var(--wii-button-border-color-shadow));  margin-left: -4px;}
 
 /* Right Button */
-#wii_direction_buttons.right-pressed #BtnRight {transform: rotateY(-22.5deg);}
-#wii_direction_buttons.right-pressed #BtnTop { filter: drop-shadow(-4px 0 var(--wii_button_border_color_dark)); transform:rotateY(-22.5deg); margin-right: -2px;}
-#wii_direction_buttons.right-pressed #BtnBottom { filter: drop-shadow(-4px 2px 0 var(--wii_button_border_color_dark)); transform:rotateY(-22.5deg); margin-right: -2px;}
-#wii_direction_buttons.right-pressed #BtnLeft {transform: rotateY(30deg); filter: drop-shadow(-3px 2px 0 var(--wii_button_border_color_dark)); margin-right: -4px;}
+#wii-direction-buttons.right-pressed #button-right {transform: rotateY(-22.5deg);}
+#wii-direction-buttons.right-pressed #button-top { filter: drop-shadow(-4px 0 var(--wii-button-border-color-shadow)); transform:rotateY(-22.5deg); margin-right: -2px;}
+#wii-direction-buttons.right-pressed #button-bottom { filter: drop-shadow(-4px 2px 0 var(--wii-button-border-color-shadow)); transform:rotateY(-22.5deg); margin-right: -2px;}
+#wii-direction-buttons.right-pressed #button-left {transform: rotateY(30deg); filter: drop-shadow(-3px 2px 0 var(--wii-button-border-color-shadow)); margin-right: -4px;}
 
 /* Bottom Button */
-#wii_direction_buttons.bottom-pressed #BtnBottom {filter: drop-shadow(0 0px 0 var(--wii_button_border_color_dark));}
-#wii_direction_buttons.bottom-pressed #BtnLeft {filter: drop-shadow(0 -2px 0 var(--wii_button_border_color_dark)); transform: rotateX(-22.5deg); margin-bottom: -2px;}
-#wii_direction_buttons.bottom-pressed #BtnRight {filter: drop-shadow(0 -2px 0 var(--wii_button_border_color_dark)); transform: rotateX(-22.5deg); margin-bottom: -2px;}
-#wii_direction_buttons.bottom-pressed #BtnTop { filter: drop-shadow(0 -2px 0 var(--wii_button_border_color_dark)); transform: rotateX(40deg);}
-
-
+#wii-direction-buttons.bottom-pressed #button-bottom {filter: drop-shadow(0 0px 0 var(--wii-button-border-color-shadow));}
+#wii-direction-buttons.bottom-pressed #button-left {filter: drop-shadow(0 -2px 0 var(--wii-button-border-color-shadow)); transform: rotateX(-22.5deg); margin-bottom: -2px;}
+#wii-direction-buttons.bottom-pressed #button-right {filter: drop-shadow(0 -2px 0 var(--wii-button-border-color-shadow)); transform: rotateX(-22.5deg); margin-bottom: -2px;}
+#wii-direction-buttons.bottom-pressed #button-top { filter: drop-shadow(0 -2px 0 var(--wii-button-border-color-shadow)); transform: rotateX(40deg);}
 
 /************/
 /* A Button */
 /************/
-#wii_A_button {
+#wii-a-button {
     button {
         aspect-ratio: 1/1;
         width: 35px;
-        border: 2px solid var(--wii_button_border_color);
+        border: 2px solid var(--wii-button-border-color);
         border-radius: 50%;
         text-align: center;
         margin-top: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
-        filter: var(--wii_button_shadow);
-        background: var(--wii_color);
-        color: var(--wii_color-text);
+        filter: var(--wii-button-shadow);
+        background: var(--wii-color);
+        color: var(--wii-color-text);
     }
 
     button:active {
-        filter: inner-shadow(0 0 0px var(--wii_button_border_color_dark));
+        filter: inner-shadow(0 0 0px var(--wii-button-border-color-shadow));
         transform: translateY(2px);
     }
 
@@ -230,22 +248,22 @@ main {
 /* Center Button */
 /*****************/
 /** - Home + **/
-#wii_center_buttons {
+#wii-center-buttons {
     display: flex;
     gap: 10px;
     justify-content: space-evenly;
     margin-top: 40px;
 }
 
-#wii_center_buttons section {
+#wii-center-buttons section {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#wii_center_buttons>button,
-#wii_center_buttons section>button>i {
-    border: 2px solid var(--wii_button_border_color);
+#wii-center-buttons>button,
+#wii-center-buttons section>button>i {
+    border: 2px solid var(--wii-button-border-color);
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     height: 20px;
@@ -255,30 +273,30 @@ main {
     justify-content: center;
 }
 
-#wii_center_buttons>section button {
+#wii-center-buttons>section button {
     border: none;
-    background-color: var(--wii_color);
+    background-color: var(--wii-color);
 }
 
-#wii_center_buttons section {
+#wii-center-buttons section {
     font-size: 10px;
     text-transform: uppercase;
 
 }
 
-#wii_center_buttons i {
-    color: var(--wii_controller_blue);
+#wii-center-buttons i {
+    color: var(--wii-controller-blue);
 }
 
-#wii_center_buttons {
+#wii-center-buttons {
     >button {
-        filter: var(--wii_button_shadow);
-        background: var(--wii_color);
-        color: var(--wii_color-text);
+        filter: var(--wii-button-shadow);
+        background: var(--wii-color);
+        color: var(--wii-color-text);
     }
 
     >button:active{
-        filter: inner-shadow(0 0 0px var(--wii_button_border_color_dark));
+        filter: inner-shadow(0 0 0px var(--wii-button-border-color-shadow));
         transform: translateY(2px);
     }
 }
@@ -288,35 +306,35 @@ main {
 /***************/
 /* Sound Holes */
 /***************/
-#wii_sound_holes {
+#wii-sound-holes {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 20px;
 }
 
-.wii_hole_big div {
+.wii-hole-big div {
     width: 5px;
 }
 
-.wii_hole_medium div {
+.wii-hole-medium div {
     width: 3px;
 }
 
-.wii_hole_small div {
+.wii-hole-small div {
     width: 1.5px;
 }
 
-.wii_hole_small,
-.wii_hole_medium,
-.wii_hole_big {
+.wii-hole-small,
+.wii-hole-medium,
+.wii-hole-big {
     display: flex;
     justify-content: space-around;
     gap: 2px;
 
     div {
         aspect-ratio: 1/1;
-        background: black;
+        background: #000000;
         border-radius: 50%;
     }
 }
@@ -325,34 +343,34 @@ main {
 /***************/
 /* 1/2 Buttons */
 /***************/
-#wii_1_2_buttons {
+#wii-1-2-buttons {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 
     button:active {
-        filter: inner-shadow(0 0 0px var(--wii_button_border_color_dark));
+        filter: inner-shadow(0 0 0px var(--wii-button-border-color-shadow));
         transform: translateY(2px);
     }
 }
 
 
-#wii_1_2_buttons * {
-    border: 2px solid var(--wii_button_border_color);
+#wii-1-2-buttons * {
+    border: 2px solid var(--wii-button-border-color);
     border-radius: 50%;
     aspect-ratio: 1/1;
     width: 25px;
     text-align: center;
-    filter: var(--wii_button_shadow);
-    background: var(--wii_color);
-    color: var(--wii_color-text);
+    filter: var(--wii-button-shadow);
+    background: var(--wii-color);
+    color: var(--wii-color-text);
 }
 
 /*****************/
 /* Player Lights */
 /*****************/
-#wii_player_lights {
+#wii-player-lights {
     display: flex;
     justify-content: space-between;
     gap: 7px;
@@ -361,43 +379,44 @@ main {
     * {
         aspect-ratio: 1 / 1;
         width: 8px;
-        background: var(--wii_light_off);
+        background: var(--wii-light-off);
     }
+}
 
-    div:first-of-type {
-        background: var(--wii_controller_blue);
-        filter: drop-shadow(0px 0px 3px var(--wii_controller_blue));
-    }
+#player-light {
+    background: var(--wii-controller-light);
+    filter: drop-shadow(0px 0px 3px var(--wii-controller-light));
 }
 
 
 /************/
 /* Wii Text */
 /************/
-#wii_text {
+#wii-text {
     margin-top: 5px;
     font-size: 20px;
-    font-weight: bold;
+    font-family: JostBold, sans-serif;
 }
 
 /***********/
 /* Pop-ups */
 /***********/
-
-
 .popup-inner {
     width: 100%;
-    background: var(--wii_color);
-    color: var(--wii_color-text);
-    border: 5px solid var(--wii_button_border_color);
+    background: var(--wii-color);
+    color: var(--wii-color-text);
+    border: 5px solid var(--wii-button-border-color);
     border-radius: 20px;
-    ;
-    font-family: var(--wii_font);
-    filter: drop-shadow(0 1em 0.5em var(--wii_button_border_color_dark));
+    font-family: var(--wii-font);
+    filter: drop-shadow(0 1em 0.5em var(--wii-button-border-color-shadow));
     padding: 1em;
     overflow: hidden;
 
-    p {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transition-behavior: allow-discrete;
+
+    p { 
         margin-top: 1em;
     }
 
@@ -410,6 +429,19 @@ main {
     }
 }
 
+/* When open */
+.popup-inner:popover-open {
+  opacity: 1;
+}
+
+/* Starting state for opening */
+@starting-style {
+  .popup-inner:popover-open {
+    opacity: 0;
+  }
+}
+
+
 article[popover] {
     position: fixed;
     top: 50%;
@@ -417,7 +449,7 @@ article[popover] {
     transform: translate(-50%, -50%);
 }
 
-#pop-up5 {
+#pop-up-other {
     top: 25%;
 
     p:first-of-type {
@@ -425,13 +457,17 @@ article[popover] {
     }
 }
 
+
+
 /*********************/
 /* Pop-up Animations */
 /*********************/
 
 
 /* Code found on Animista.com */
-/* Slide Forward Top */
+/* 
+Oude code die werkte voor oude manier van pop-ups, werkten niet meer sinds attribuut popover
+
 .slide-fwd-top {
     -webkit-animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -461,8 +497,6 @@ article[popover] {
     }
 }
 
-
-/* Slide Forward Left */
 .slide-fwd-left {
     -webkit-animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -492,7 +526,6 @@ article[popover] {
     }
 }
 
-/* Slide Forward Right */
 .slide-fwd-right {
     -webkit-animation: slide-fwd-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-fwd-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -522,7 +555,6 @@ article[popover] {
     }
 }
 
-/* Slide Forward Bottom */
 .slide-fwd-bottom {
     -webkit-animation: slide-fwd-bottom 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-fwd-bottom 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -550,7 +582,7 @@ article[popover] {
         -webkit-transform: translateZ(160px) translateY(100px) scale(1);
         transform: translateZ(160px) translateY(100px) scale(1);
     }
-}
+} */
 
 /******************/
 /* Wii Animations */
@@ -613,5 +645,54 @@ article[popover] {
     100% {
         -webkit-transform: rotate(-720deg);
         transform: rotate(-720deg);
+    }
+}
+
+.controller-shake {
+    -webkit-animation: shake-controller 0.3s ease-in-out both;
+    animation: shake-controller 0.3s ease-in-out both;
+}
+
+@-webkit-keyframes shake-controller {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    33% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+
+    66% {
+        -webkit-transform: rotate(-60deg);
+        transform: rotate(-60deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shake-controller {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    33% {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+    }
+
+    66% {
+        -webkit-transform: rotate(-0deg);
+        transform: rotate(-60deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 }
