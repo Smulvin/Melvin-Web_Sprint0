@@ -44,10 +44,10 @@ border-right: 2px solid var(--wii_button_border_color);
 ```
 
 Werd veranderd naar het volgende: 
-<code>
+```
 border: 2px solid var(--wii_button_border_color);
 border-bottom: none;
-</code>
+```
 
 #### Daily Checkout met Dylan
 Toevallig werd ik gekoppeld met de persoon die naast me zat, dus wij hadden gedurende de dag al veel overlegd en gekeken naar elkaars werk, dus kon ik niet veel uit deze checkout halen.
@@ -85,7 +85,7 @@ Deze week heb ik verschillende dingen geleerd, zo heb ik gewerkt met animaties, 
 Ben vandaag verder gegaan met de feedback die ik had gekregen uit de markt. Sanne had me verteld over het popover attribute. Ik heb hier naar gekeken en kon daardoor een groot deel van mijn javascript code weghalen. De pop-ups zelf werkend maken duurde 15 min. Er kwam hierdoor alleen wel een probleem met het positioneren van de popups. Omdat het nieuwe attribute het een position: fixed maakt, moest ik het centreren anders doen. Oorspronkelijk had ik het gedaan met position: absolute, maar dat werkte te hard met transform. Dit werkte weer niet vanwege mijn animaties omdat die ook transform gebruiken. Ik heb eerste de animaties uitgezet zodat ik eerst goed de positie kon regelen. Dat uitzoeken duurde ongeveer anderhalf uur. Ik ben toen eerst gaan werken aan de states van buttons. Ik wilde in ieder geval een pressed state toevoegen. Voor de A, - en + knop ging dit vrij gemakkelijk. Maar voor de D-Pad was dit een stuk moeilijker, ik probeer het eerst met een ~ selector, maar dit werkt alleen voor elementen die na het hoofdelement in de DOM komen, dus alleen de bovenste knop werkte goed. Ik heb daarna met wat hulp van ChatGPT het werkend gekregen. Ik gaf hem precies de uitleg van welke knoppen er moeten veranderen en welke op dezelfde manier veranderen. Later bleek dit toch iets anders te lopen. Maar het werkend krijgen van states van buttons duurde ongeveer 3 uur. Als laatste vandaag heb ik mijn API aangevuld en heb ik de pop up waar de informatie in staat ook wat meer ingevuld door mijn bijnaam en favoriete games toe te voegen. Dat gedeelte duurde ongeveer een uur.
 
 #### Weggehaalde code
-<code>
+```
 // =======================
 // Button references
 // =======================
@@ -181,10 +181,10 @@ document.addEventListener("click", (e) => {
     hideAllPopups();
   }
 });
-</code>
+```
 
 #### Geprobeerde code voor D-Pad states
-<code>
+```
     #BtnTop:active {
         background: yellow;
         
@@ -235,7 +235,7 @@ document.addEventListener("click", (e) => {
             background:green;
         }
     }
-</code>
+```
 
 <img src="Assets/img_readme/D-Pad_States.png">
 
@@ -256,7 +256,7 @@ https://www.reddit.com/r/learnjavascript/comments/gp2t2h/how_to_add_gravity_to_e
 https://brm.io/matter-js/
 
 #### Geprobeerde code
-<code>
+```
 // =======================
 // Home button gravity effect
 // =======================
@@ -326,21 +326,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-</code>
+```
 
 #### Checkout met Sabrina
 Ik had vandaag een check-out samen emt Sabrina. Zij had een soort paspoortje waar vooral veel animatie in zat. Zelf wilde ik ook meer met animatie doen dus het was leuk om te kijken wat iemand er anders er al mee had gedaan. Daar heb ik inspiratie uit kunnen nemen. Voor de rest heb ik zelf verteld over hoe ik met matter.js heb geoefend, maar het denk ik toch later niet ga gebruiken. Het werkte namelijk toch niet helemaal lekker voor mijn project. Morgen ga ik werken aan de laatste puntjes op de I en ga ik mijn homeButton nog een andere functionaliteit geven, het liefst met meer animatie. Voor de rest ga ik toch nog even kijken of het mogelijk is om mijn pop-ups te animeren. Het zou namelijk kunnen zijn dat het niet werkte door code op mijn body die overbodig was, ga ik morgen naar kijken. Morgen ga dus werken aan die animaties, ga ik een nieuwe mechaniek/animatie toevoegen aan de home knop en wil ik nog wat kleine dingetjes toevoegen. Zo zag ik bij Dylan hoe hij de favColor uit de API gebruikte om zijn speler te veranderen, ik kan waarschijnlijk hetzelfde doen met het lampje op mijn controller. Ook wilde ik kijken of ik nog een klein dingetje kon toevoegen dat je misschien niet standaard zou vinden op de website.
 
 ### Woensdag 11 februari
 Vandaag was ik zoals altijd weer eerder in het lokaal. Voordat de les was begonnen kreeg ik het al voor elkaar dat de favoriete kleur van de persoon die actief is in de pop-ups, dat die kleur wordt gebruikt in het lampje op de controller. Ik moest alleen later nog toevoegen dat hij weer terug gaat naar default zodra de pop-up sluit. Dit duurde ongeveer 30 min. Daarna had ik een code review samen met Lisa. Hier kwam vooral uit dat ik mijn naam geven wat netter kon doen in kebab-case en dat mijn javascript nog veel ; had, dat duurde ongeveer een uur in totaal. Ik wilde nog even kijken naar de animatie voor de popups, aangezien ik dacht te weten hoe ik dat kon fixen. Later had ik het toch nog aan Sanne gevraagd, die raadde een website aan. Aan de hand van die website kreeg ik het gefixt om een opacity animatie te maken. Later op de dag lukte het ook nog met de scale, maar alleen bij het openen. Met hulp van Sanne kregen we daarna ook het sluiten gefixt. Heb ik geleerd over hoe je niet altijd transform hoeft te gebruiken voor translate, rotate of scale. Maar dat ze wel in die volgorde worden uitgevoerd. Het hele fixen van de animatie duurde ongeveer 2,5 uur. Hierdoor kon ik wel mijn oude animatie code weghalen. Vandaag heb ik nog een schud animatie op de home knop gezet samen met een sfx, dit duurde maar 1 uurtje. Deze animatie had ik wel compleet zelf gemaakt en niet van een voorbeeld. Ik had tijdens de typografie workshop van gister geleerd dat mijn manier van een font inladen eigenlijk niet goed was, dus vandaag had ik dat beter gedaan door hem te downloaden en mee te sturen in het project ipv hem te importeren. Dit duurde even voordat ik het werkend had, totaal iets van half uurtje. Ik had ook nog een probleem met darkmode gefixt, als je namelijk al begon in darkmode kon je niet meer in lightmode komen. Ik heb mijn media query uit mijn css gehaald zodat ik in JS kon checken in welke state je zat en aan de hand daarvan de juiste klas kon koppelen aan de button. Ik had ook nog een kleine gradient toegevoegd aan mijn background, puur zodat hij iets minder vlak is. Daar had ik een website voor gebruikt om dat te genereren. Als allerlaatste heb ik nog even een favicon toegevoegd.
-<code>
+```
 @media (prefers-color-scheme:dark) {
         --wii-color: #2c3033;
         --wii-color-text: #ffffff;
         --wii-button-border-color-shadow: #1e1e1e;
 }
-</code>
-<code>
+```
+```
 .slide-fwd-top {
     -webkit-animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -456,7 +456,7 @@ Vandaag was ik zoals altijd weer eerder in het lokaal. Voordat de les was begonn
         transform: translateZ(160px) translateY(100px) scale(1);
     }
 }
-</code>
+```
 
 #### Code review met Lisa
 Uit de code review kwam vooral dat ik soms mijn naamgeving wel wat er beter kan doen, niet alleen gebruik ik niet vaak kebab-case voor mijn classes en ids, maar zijn niet alle namen allemaal even duidelijk. In mijn HTML en mijn CSS. In mijn JavaScript specifiek moet ik even consistent worden in wanneer ik wel of niet een ; ga doen.
