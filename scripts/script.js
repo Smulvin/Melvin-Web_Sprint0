@@ -228,3 +228,31 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const controllerLight = document.getElementById("player-light")
 })
+
+document.addEventListener("DOMContentLoaded", () => {
+  const lights = document.querySelectorAll("#wii-player-lights div");
+
+  let activeIndex = 0; // start with first light active
+  lights[activeIndex].id = "player-light"; // mark the initial active light
+
+  // Listen for key presses
+  document.addEventListener("keydown", (e) => {
+    const key = e.key;
+
+    // Only respond to keys 1–4
+    if (!["1", "2", "3", "4"].includes(key)) return;
+
+    const newIndex = parseInt(key, 10) - 1; // convert to 0-based index
+
+    // Remove ID from currently active light
+    lights[activeIndex].id = "";
+
+    // Assign ID to the new light
+    lights[newIndex].id = "player-light";
+
+    // Update active index
+    activeIndex = newIndex;
+
+    console.log(`Active light switched to #${newIndex + 1}`);
+  });
+});

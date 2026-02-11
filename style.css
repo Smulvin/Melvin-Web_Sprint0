@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Jost";
-    src:url("/Assets/fonts/Jost-Regular.ttf") format("truetype");
+    src:url("Assets/fonts/Jost-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -91,7 +91,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Jost, sans-serif;
+    font-family: var(--wii-font);
 
     transition: transform 0.4s ease;
 
