@@ -475,3 +475,26 @@ Vandaag om 10.00 is de deadline en hebben we een markt met alle websites
 De eerste dag van de tweede week was ik thuis gebleven omdat ik me niet zo lekker voelde, maar heb ik wel nog een beetje door kunnen werken aan mijn opdracht. Zo ben ik verder gegaan met de API, hier had ik wel wat hulp van ChatGPT bij gebruikt. Ik had namelijk problemen met het inladen van de juiste informatie voor op de juiste locatie in de pop-up. Ik had nog 2 knoppen van mijn controller over waar ik nog geen functie voor had, dus had ik besloten dat ik ze allebei zou gebruiken voor de extra eis van deze week. Dat je met de 1 een id naar beneden zou gaan en met de 2 een id omhoog. Dit was alleen wat lastiger dan verwacht dus ook hier heb ik ChatGPT om hulp gevraagd. Daarna kwam ik er wel goed uit. deze week heb ik ook iets geleerd over een onderdeel wat ik later niet eens heb gebruikt in mijn eindproduct. Ik probeerde namelijk een extra dingetje voor de leuk toe te voegen dat als je op de Home Button klikt op de controller dat dan elke toets en element zou vallen in je scherm, maar nog steeds functioneel waren. Het duurde lang om te kijken hoe dit moest, maar uiteindelijk heb ik het geprobeerd met matter.js. Dit is een javascript script dat je kan inladen zodat je hem voor je website kan gebruiken< Het heeft heel veel mogelijkheden, maar het zou nu iets te laat zijn om het werkend te maken. Hier had ik dan eerder mee moeten beginnen, want nu had ik er geen tijd meer voor. Maar ik kan dit zeker later voor een andere website nog zeker wel eens gebruiken. Later heb ik van de home knop een extra animatie toegevoegd, en deze had ik 100% zelf gemaakt met CSS. Dus ook zonder voorbeeld van animista. Het was een simpele animatie, maar ben zeer tevreden over hoe hij eruit is komen te zien. Ik had nog een sound effect toegevoegd voor een beetje extra sfeer. <br>
 Deze week had ik ook nog een workshop over typografie. Dit was niet per se allemaal nieuwe informatie, maar het was wel handig om de basisregels even een beetje door te nemen over hoeveel tekens op een regel en waar je op moet letten bij het uitzoeken van een goed leesbaar lettertype. <br>
 De laatste woensdag was een kwestie van puntjes op de i, ik had nog een paar kleine ideetjes voor dingen waar ik iets mee zou willen. Zo heb ik de fav_color van medestudenten nog gebruikt voor mijn lampje op de controller, heb ik toegevoegd dat je met 1,2,3 en 4 het lampje kan verplaatsen. Heb ik veranderd hoe ik mijn font inlaad omdat ik tijdens de workshop had geleerd dat mijn huidige manier van importeren eigenlijk niet goed is. En heb ik toch nog even gekeken naar de animatie van de pop-ups. Deze had ik namelijk een tijdje uitstaan omdat het lastig was om het responsive te maken met mijn oude code. Maar aangezien ik voor mijn leerdoel met animaties wilde werken, keek ik er toch nog even naar. Sanna had me een website verteld waar ik goed met popover pop-ups animaties kon maken. Dit hielp veel en ik kwam ook wel ver, maar voor het laatste beetje had ik toch nog even Sanne om hulp gevraagd. Hij had nog uitleg gegeven over hoe je met transform properties zoals translate, rotate en scale, je niet per se eerst transform hoeft neer te zetten. Dit kan helpen om mijn wat meer overzicht te geven in mijn CSS. Maar het was uiteindelijk wel nog gelukt om de animaties werkend te krijgen, daar ben ik zeer tevreden mee. Voor de rest was het handig om een website te hebben waar alle standaard code conventions op staan, die kan ik meenemen naar volgende projecten zodat ik niet achteraf alles nog hoef te checken.
+
+### Complete lijst
+https://www.w3schools.com/cssref/css_pr_aspect-ratio.php
+https://www.w3schools.com/cssref/css3_pr_justify-content.php
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/drop-shadow
+https://stackoverflow.com/questions/47601564/equal-width-columns-in-css-grid
+https://www.w3schools.com/css/css_align.asp
+https://developer.mozilla.org/en-US/docs/Web/API/Window/close
+https://www.w3schools.com/css/css_grid_container.asp
+https://stackoverflow.com/questions/4151743/how-can-i-change-the-thickness-of-my-hr-tag
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not
+https://animista.net/
+https://sinds1971.nl/spelenmetcss/2022-feb/stephan/index.html
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover
+https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-classes
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/rotateX 
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/transform-function/scale
+https://www.reddit.com/r/learnjavascript/comments/gp2t2h/how_to_add_gravity_to_elements/
+https://brm.io/matter-js/
+https://blog.logrocket.com/animating-dialog-popover-elements-css-starting-style/
+https://cssgradient.io/
+ChatGPt voor sommige dingen
