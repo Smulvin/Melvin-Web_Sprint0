@@ -414,7 +414,9 @@ main {
     overflow: hidden;
 
     opacity: 0;
-    transition: opacity 0.3s ease;
+    translate:-50% -50%;
+    scale:0;
+    transition: opacity .5s ease, scale .5s ease, overlay .5s ease, display .5s ease;
     transition-behavior: allow-discrete;
 
     p { 
@@ -432,13 +434,15 @@ main {
 
 /* When open */
 .popup-inner:popover-open {
-  opacity: 1;
+    opacity: 1;
+    scale:1
 }
 
 /* Starting state for opening */
 @starting-style {
   .popup-inner:popover-open {
     opacity: 0;
+    scale:0;
   }
 }
 
@@ -447,7 +451,6 @@ article[popover] {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 #pop-up-other {

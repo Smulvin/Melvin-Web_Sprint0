@@ -334,6 +334,7 @@ popup animatietje
 player light wisselen adhv numpad
 shake animatie op home knop + sfx
 font beter toegevoegd
+dark mode fix als je start met dark mode
 
 #### Code review met Lisa
 Uit de code review kwam vooral dat ik soms mijn naamgeving wel wat er beter kan doen, niet alleen gebruik ik niet vaak kebab-case voor mijn classes en ids, maar zijn niet alle namen allemaal even duidelijk. In mijn HTML en mijn CSS. In mijn JavaScript specifiek moet ik even consistent worden in wanneer ik wel of niet een ; ga doen.
