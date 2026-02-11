@@ -476,7 +476,8 @@ De eerste dag van de tweede week was ik thuis gebleven omdat ik me niet zo lekke
 Deze week had ik ook nog een workshop over typografie. Dit was niet per se allemaal nieuwe informatie, maar het was wel handig om de basisregels even een beetje door te nemen over hoeveel tekens op een regel en waar je op moet letten bij het uitzoeken van een goed leesbaar lettertype. <br>
 De laatste woensdag was een kwestie van puntjes op de i, ik had nog een paar kleine ideetjes voor dingen waar ik iets mee zou willen. Zo heb ik de fav_color van medestudenten nog gebruikt voor mijn lampje op de controller, heb ik toegevoegd dat je met 1,2,3 en 4 het lampje kan verplaatsen. Heb ik veranderd hoe ik mijn font inlaad omdat ik tijdens de workshop had geleerd dat mijn huidige manier van importeren eigenlijk niet goed is. En heb ik toch nog even gekeken naar de animatie van de pop-ups. Deze had ik namelijk een tijdje uitstaan omdat het lastig was om het responsive te maken met mijn oude code. Maar aangezien ik voor mijn leerdoel met animaties wilde werken, keek ik er toch nog even naar. Sanna had me een website verteld waar ik goed met popover pop-ups animaties kon maken. Dit hielp veel en ik kwam ook wel ver, maar voor het laatste beetje had ik toch nog even Sanne om hulp gevraagd. Hij had nog uitleg gegeven over hoe je met transform properties zoals translate, rotate en scale, je niet per se eerst transform hoeft neer te zetten. Dit kan helpen om mijn wat meer overzicht te geven in mijn CSS. Maar het was uiteindelijk wel nog gelukt om de animaties werkend te krijgen, daar ben ik zeer tevreden mee. Voor de rest was het handig om een website te hebben waar alle standaard code conventions op staan, die kan ik meenemen naar volgende projecten zodat ik niet achteraf alles nog hoef te checken.
 
-### Complete lijst
+## Complete lijst
+### Websites
 https://www.w3schools.com/cssref/css_pr_aspect-ratio.php
 https://www.w3schools.com/cssref/css3_pr_justify-content.php
 https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/filter-function/drop-shadow
@@ -498,3 +499,19 @@ https://brm.io/matter-js/
 https://blog.logrocket.com/animating-dialog-popover-elements-css-starting-style/
 https://cssgradient.io/
 ChatGPt voor sommige dingen
+
+### Illustraties
+https://images.seeklogo.com/logo-png/9/2/nintendo-wii-logo-png_seeklogo-99685.png
+
+### Inspiratie
+https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNw2Ip8d8CU5oWvMjqvJO2AsS2SEM0ilbTA&s
+https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1146475106.jpg
+https://www.retronintendokaufen.de/Files/2/40000/40305/ProductPhotos/Source/1674897526.jpg
+
+### Sounds
+https://www.youtube.com/shorts/Wu71oHDVmNc
+https://www.youtube.com/watch?v=psc_A0bUgSQ-
+https://www.youtube.com/watch?v=P1gJJqYXpTc
+
+### Fonts
+https://fonts.google.com/specimen/Jost
