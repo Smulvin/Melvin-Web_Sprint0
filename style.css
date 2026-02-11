@@ -19,8 +19,8 @@
 }
 
 :root {
-    --background: #686868;
-
+    /* gradient gemaakt op https://cssgradient.io/ */
+    --background: radial-gradient(circle,rgba(148, 148, 148, 1) 0%, rgba(104, 104, 104, 1) 100%);
 
     --color-scheme: light dark;
 
@@ -29,7 +29,6 @@
     --wii-color: #efefef;
     --wii-color-text: #000000;
     --wii-button-border-color-shadow: #a7a7a7;
-
 
     --wii-red-power: #c19095;
     --wii-controller-blue: #1d95ba;
@@ -61,12 +60,6 @@ body.dark-mode {
     --wii-button-border-color-shadow: #393939;
 }
 
-body.light-mode {
-    --wii-color: #efefef;
-    --wii-color-text: #000000;
-    --wii-button-border-color-shadow: #a7a7a7;
-}
-
 main {
     width: 100%;
     height: 100%;
@@ -91,7 +84,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: var(--wii-font);
+    font-family: 'Jost', sans-serif;
 
     transition: transform 0.4s ease;
 

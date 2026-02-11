@@ -333,6 +333,7 @@ Uit de code review kwam vooral dat ik soms mijn naamgeving wel wat er beter kan 
 
 #### Bekeken websites
 https://blog.logrocket.com/animating-dialog-popover-elements-css-starting-style/
+https://cssgradient.io/
 
 ### Donderdag 12 februari
 Vandaag om 10.00 is de deadline
