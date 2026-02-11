@@ -37,11 +37,11 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:not
 
 #### AI:
 Gevraagd of hij de volgende regels korter kon maken:
-<code>
+```
 border-top: 2px solid var(--wii_button_border_color); 
 border-left: 2px solid var(--wii_button_border_color); 
 border-right: 2px solid var(--wii_button_border_color);
-</code>
+```
 
 Werd veranderd naar het volgende: 
 <code>
@@ -257,75 +257,75 @@ https://brm.io/matter-js/
 
 #### Geprobeerde code
 <code>
-    // =======================
-    // Home button gravity effect
-    // =======================
-    document.addEventListener('DOMContentLoaded', () => {
-        const homeBtn = document.getElementById('homeBtn');
+// =======================
+// Home button gravity effect
+// =======================
+document.addEventListener('DOMContentLoaded', () => {
+    const homeBtn = document.getElementById('homeBtn');
 
-        homeBtn.addEventListener('click', () => {
-            // Prevent multiple initializations
-            if (window.gravityActivated) return;
-            window.gravityActivated = true;
+    homeBtn.addEventListener('click', () => {
+        // Prevent multiple initializations
+        if (window.gravityActivated) return;
+        window.gravityActivated = true;
 
-            const { Engine, Runner, Bodies, Composite, Events } = Matter;
+        const { Engine, Runner, Bodies, Composite, Events } = Matter;
 
-            // Create engine
-            const engine = Engine.create();
-            const world = engine.world;
+        // Create engine
+        const engine = Engine.create();
+        const world = engine.world;
 
-            const width = window.innerWidth;
-            const height = window.innerHeight;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
 
-            // Get all elements with the gravity-target class
-            const gravityTargets = document.querySelectorAll('.gravity-target');
+        // Get all elements with the gravity-target class
+        const gravityTargets = document.querySelectorAll('.gravity-target');
 
+        gravityTargets.forEach(elem => {
+            const rect = elem.getBoundingClientRect();
+
+            const body = Bodies.rectangle(
+                rect.left + rect.width / 2,
+                rect.top + rect.height / 2,
+                rect.width,
+                rect.height,
+                {
+                    restitution: 0.5, // bounce
+                    friction: 0.1,
+                    frictionAir: 0.02,
+                    inertia: Infinity // keeps them upright (optional)
+                }
+            );
+
+            elem._matterBody = body;
+            Composite.add(world, body);
+        });
+
+        // Invisible walls to keep elements inside viewport
+        const thickness = 100;
+        const walls = [
+            Bodies.rectangle(width / 2, -thickness / 2, width, thickness, { isStatic: true }),
+            Bodies.rectangle(width / 2, height + thickness / 2, width, thickness, { isStatic: true }),
+            Bodies.rectangle(-thickness / 2, height / 2, thickness, height, { isStatic: true }),
+            Bodies.rectangle(width + thickness / 2, height / 2, thickness, height, { isStatic: true })
+        ];
+        Composite.add(world, walls);
+
+        // Run the physics engine
+        const runner = Runner.create();
+        Runner.run(runner, engine);
+
+        // Move the actual HTML elements according to physics bodies
+        Events.on(engine, 'afterUpdate', () => {
             gravityTargets.forEach(elem => {
-                const rect = elem.getBoundingClientRect();
-
-                const body = Bodies.rectangle(
-                    rect.left + rect.width / 2,
-                    rect.top + rect.height / 2,
-                    rect.width,
-                    rect.height,
-                    {
-                        restitution: 0.5, // bounce
-                        friction: 0.1,
-                        frictionAir: 0.02,
-                        inertia: Infinity // keeps them upright (optional)
-                    }
-                );
-
-                elem._matterBody = body;
-                Composite.add(world, body);
-            });
-
-            // Invisible walls to keep elements inside viewport
-            const thickness = 100;
-            const walls = [
-                Bodies.rectangle(width / 2, -thickness / 2, width, thickness, { isStatic: true }),
-                Bodies.rectangle(width / 2, height + thickness / 2, width, thickness, { isStatic: true }),
-                Bodies.rectangle(-thickness / 2, height / 2, thickness, height, { isStatic: true }),
-                Bodies.rectangle(width + thickness / 2, height / 2, thickness, height, { isStatic: true })
-            ];
-            Composite.add(world, walls);
-
-            // Run the physics engine
-            const runner = Runner.create();
-            Runner.run(runner, engine);
-
-            // Move the actual HTML elements according to physics bodies
-            Events.on(engine, 'afterUpdate', () => {
-                gravityTargets.forEach(elem => {
-                    const body = elem._matterBody;
-                    elem.style.position = 'absolute';
-                    elem.style.left = `${body.position.x - body.bounds.max.x + body.bounds.min.x + (body.bounds.max.x - body.bounds.min.x)/2}px`;
-                    elem.style.top = `${body.position.y - body.bounds.max.y + body.bounds.min.y + (body.bounds.max.y - body.bounds.min.y)/2}px`;
-                    elem.style.transform = `rotate(${body.angle}rad)`; // remove this line if you want to prevent rotation
-                });
+                const body = elem._matterBody;
+                elem.style.position = 'absolute';
+                elem.style.left = `${body.position.x - body.bounds.max.x + body.bounds.min.x + (body.bounds.max.x - body.bounds.min.x)/2}px`;
+                elem.style.top = `${body.position.y - body.bounds.max.y + body.bounds.min.y + (body.bounds.max.y - body.bounds.min.y)/2}px`;
+                elem.style.transform = `rotate(${body.angle}rad)`; // remove this line if you want to prevent rotation
             });
         });
     });
+});
 </code>
 
 #### Checkout met Sabrina
