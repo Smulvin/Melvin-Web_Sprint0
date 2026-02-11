@@ -6,14 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'>
+    <!-- Favicon sourced from https://images.seeklogo.com/logo-png/9/2/nintendo-wii-logo-png_seeklogo-99685.png -->
+    <link rel="icon" href="Assets/favicon/wii.png" sizes="any">
+
     <script src="scripts/main.js" defer></script>
+
+    <!-- Ongebruikt script -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script> -->
 
     <title>Melvin Vermast - Sprint 0</title>
 </head>
 
 <body>
-
     <!--
     LEERDOELEN
     Leerdoel 1: Ik wil mezelf verbeteren in het maken van animaties door gebruik van CSS, zodat ik mijn website er interactiever en leuker uit kan laten zien.
@@ -21,18 +25,9 @@
     Leerdoel 3: Ik wil alleen gebruik van maken divs in mijn html als dat nodig is voor visuele elementen, zodat mijn websites beter werken voor screenreaders.
     -->
 
-    <!--
-    IDEE
-    Controller op scherm hebben staan, verschillende knoppen openen stukjes tekst oid
-    De controller veranderd van kleur in met dark mode / light mode
-    Hij veranderd van soort controller voor responsiveness / op het moment draait de controller alleen
-    Alleen divs voor gebruik van styling 
-    -->
-
     <main>
+         <!-- Div puur voor animatie -->
         <div id="shake-animation-div">
-
-
             <article popover id="pop-up-me" class="popup-inner">
                 <h1 id="name"></h1>
 
@@ -116,7 +111,6 @@
                         <button id="home-button">
                             <i class="fa-solid fa-house"></i>
                         </button>
-                        <!--  Idee om elk element te laten valle, hele controller breekt. -->
                         <p>Home</p>
                     </section>
                     <button id="button-plus">+</button>

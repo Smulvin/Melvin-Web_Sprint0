@@ -72,6 +72,13 @@ De meeste feedback die ik had gekregen was van Sanne. Hij vertelde me dat het vo
 Link naar de pagina van Sanne: https://sinds1971.nl/spelenmetcss/2022-feb/stephan/index.html <br>
 Link naar pagina over pop over: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover
 
+### Week 1 verslag
+Deze week ben ik begonnen met het maken van mijn eigen persoonlijke website over mijzelf. Dit moet een soort visitekaartje voor mij zijn. Dus de persoon die mijn website bezoekt moet een goed beeld van mij hebben. Aangezien ik veel met games doe en graag en in de toekomst ook wil blijven doen moest dat uiteraard terugkomen in mijn website. Aangezien ik niet standaard 1 soort game leuk vindt, wilde ik die variatie erin terug brengen. Mijn eerste idee was iets met verschillende controllers, waarbij je dan op knoppen kon drukken om informatie over mijzelf en mijn leerdoelen te krijgen. Aan het einde van de eerste week realiseerde ik me wel dat het me niet zou lukken om echt verschillende controllers te maken, het duurde namelijk al even voordat ik tevreden was over mijn eerste controller, die van de wii. <br>
+Hier kon ik wel meteen wat meer werken aan een van mijn leerdoelen, het goed repsonsive maken zonder gebruik van al te veel media queries. Omdat de wii controller redelijk uniek was met dat je hem verticaal, maar ook horizontaal kon vasthouden. Kon ik hier meteen op een goede creative manier mijn website responsive maken door hem te laten draaien zodra er te weinig ruimte was. Uiteraard begon ik vanuit mobiel (verticaal) formaat en liet ik hem horizontaal draaien voor tablet en desktop formaat. Ik had hier wel nog een beetje advies voor gevraagd aan Sanne. <br>
+Tijdens het maken van mijn controller probeerde ik ook al rekening te houden met mijn tweede leerdoel, het niet alleen maar gebruiken van divs. Uiteraard gebruikte ik daarvoor niet voor ALLES een div, maar wel voor veel containers. Omdat dat handig en makkelijker was. Maar ik wilde ook proberen mijn websites nog steeds goed te laten werken voor screenreaders. Dus heb ik geprobeerd tijdens het stylen van mijn wii controller om echt alleen divs te gebruiken als het gaat om visuele onderdelen, zoals de gaten voor geluid op de controller en de lampjes onderin voor welke speler je bent. Het was soms alleen even puzzelen welk ander HTML element dan beter zou passen. <br>
+Mijn derde leerdoel waar ik aan heb gewerkt is het meer willen leren over animaties. Deze had ik daarvoor namelijk nooit echt gebruikt. Tijdens de checkout met Lisa had ik geleerd over de website animista. Hier staan veel standaard animaties op. Hier heb ik dan deze week ook gebruik van gemaakt voor een paar van mijn pop-ups. Ik kwam er alleen wel achter dat deze nog niet goed responsive waren. En tijdens de markt kwam Sanne ook nog met een andere manier van pop-ups, dus moet ik nog maar even kijken of die animaties dan nog goed werken. <br>
+Deze week heb ik verschillende dingen geleerd, zo heb ik gewerkt met animaties, heb ik geoefend en geleerd over het realisitisch namaken van objecten door middel van CSS en heb ik verschillenden dingen geleerd tijdens de workshops. De workshop over de API was vooral een goede reminder van hoe het ook al weer werkte, de workshop over theming heb ik geleerd over hoe ik gemakkelijk een light en dark thema kan maken en toevoegen aan mijn website. Enmet de workshop over responsiveness heb ik nieuwe en handige manier geleerd over het gebruik van grid-areas die ik daarvoor nog niet kende. Al met al was het dus een flink productieve week.
+
 ## Week 2
 
 ### Maandag 9 februari
@@ -324,27 +331,147 @@ document.addEventListener('DOMContentLoaded', () => {
 #### Checkout met Sabrina
 Ik had vandaag een check-out samen emt Sabrina. Zij had een soort paspoortje waar vooral veel animatie in zat. Zelf wilde ik ook meer met animatie doen dus het was leuk om te kijken wat iemand er anders er al mee had gedaan. Daar heb ik inspiratie uit kunnen nemen. Voor de rest heb ik zelf verteld over hoe ik met matter.js heb geoefend, maar het denk ik toch later niet ga gebruiken. Het werkte namelijk toch niet helemaal lekker voor mijn project. Morgen ga ik werken aan de laatste puntjes op de I en ga ik mijn homeButton nog een andere functionaliteit geven, het liefst met meer animatie. Voor de rest ga ik toch nog even kijken of het mogelijk is om mijn pop-ups te animeren. Het zou namelijk kunnen zijn dat het niet werkte door code op mijn body die overbodig was, ga ik morgen naar kijken. Morgen ga dus werken aan die animaties, ga ik een nieuwe mechaniek/animatie toevoegen aan de home knop en wil ik nog wat kleine dingetjes toevoegen. Zo zag ik bij Dylan hoe hij de favColor uit de API gebruikte om zijn speler te veranderen, ik kan waarschijnlijk hetzelfde doen met het lampje op mijn controller. Ook wilde ik kijken of ik nog een klein dingetje kon toevoegen dat je misschien niet standaard zou vinden op de website.
 
-
-
 ### Woensdag 11 februari
+Vandaag was ik zoals altijd weer eerder in het lokaal. Voordat de les was begonnen kreeg ik het al voor elkaar dat de favoriete kleur van de persoon die actief is in de pop-ups, dat die kleur wordt gebruikt in het lampje op de controller. Ik moest alleen later nog toevoegen dat hij weer terug gaat naar default zodra de pop-up sluit. Dit duurde ongeveer 30 min. Daarna had ik een code review samen met Lisa. Hier kwam vooral uit dat ik mijn naam geven wat netter kon doen in kebab-case en dat mijn javascript nog veel ; had, dat duurde ongeveer een uur in totaal. Ik wilde nog even kijken naar de animatie voor de popups, aangezien ik dacht te weten hoe ik dat kon fixen. Later had ik het toch nog aan Sanne gevraagd, die raadde een website aan. Aan de hand van die website kreeg ik het gefixt om een opacity animatie te maken. Later op de dag lukte het ook nog met de scale, maar alleen bij het openen. Met hulp van Sanne kregen we daarna ook het sluiten gefixt. Heb ik geleerd over hoe je niet altijd transform hoeft te gebruiken voor translate, rotate of scale. Maar dat ze wel in die volgorde worden uitgevoerd. Het hele fixen van de animatie duurde ongeveer 2,5 uur. Hierdoor kon ik wel mijn oude animatie code weghalen. Vandaag heb ik nog een schud animatie op de home knop gezet samen met een sfx, dit duurde maar 1 uurtje. Deze animatie had ik wel compleet zelf gemaakt en niet van een voorbeeld. Ik had tijdens de typografie workshop van gister geleerd dat mijn manier van een font inladen eigenlijk niet goed was, dus vandaag had ik dat beter gedaan door hem te downloaden en mee te sturen in het project ipv hem te importeren. Dit duurde even voordat ik het werkend had, totaal iets van half uurtje. Ik had ook nog een probleem met darkmode gefixt, als je namelijk al begon in darkmode kon je niet meer in lightmode komen. Ik heb mijn media query uit mijn css gehaald zodat ik in JS kon checken in welke state je zat en aan de hand daarvan de juiste klas kon koppelen aan de button. Ik had ook nog een kleine gradient toegevoegd aan mijn background, puur zodat hij iets minder vlak is. Daar had ik een website voor gebruikt om dat te genereren. Als allerlaatste heb ik nog even een favicon toegevoegd.
+<code>
+@media (prefers-color-scheme:dark) {
+        --wii-color: #2c3033;
+        --wii-color-text: #ffffff;
+        --wii-button-border-color-shadow: #1e1e1e;
+}
+</code>
+<code>
+.slide-fwd-top {
+    -webkit-animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
-lampje aanpassen aan de hand van favkleur van speler uit api
-code netter
-popup animatietje
-player light wisselen adhv numpad
-shake animatie op home knop + sfx
-font beter toegevoegd
-dark mode fix als je start met dark mode
+@-webkit-keyframes slide-fwd-top {
+    0% {
+        -webkit-transform: translateZ(0) translateY(0) scale(0.8);
+        transform: translateZ(0) translateY(0) scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: translateZ(160px) translateY(-100px) scale(1);
+        transform: translateZ(160px) translateY(-100px) scale(1);
+    }
+}
+
+@keyframes slide-fwd-top {
+    0% {
+        -webkit-transform: translateZ(0) translateY(0) scale(0.8);
+        transform: translateZ(0) translateY(0) scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: translateZ(160px) translateY(-100px) scale(1);
+        transform: translateZ(160px) translateY(-100px) scale(1);
+    }
+}
+
+.slide-fwd-left {
+    -webkit-animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-fwd-left {
+    0% {
+        -webkit-transform: translateZ(0) translateX(0) scale(0.8);
+        transform: translateZ(0) translateX(0) scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: translateZ(160px) translateX(-100px) scale(1);
+        transform: translateZ(160px) translateX(-100px) scale(1);
+    }
+}
+
+@keyframes slide-fwd-left {
+    0% {
+        -webkit-transform: translateZ(0) translateX(0) scale(0.8);
+        transform: translateZ(0) translateX(0) scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: translateZ(160px) translateX(-100px) scale(1);
+        transform: translateZ(160px) translateX(-100px) scale(1);
+    }
+}
+
+.slide-fwd-right {
+    -webkit-animation: slide-fwd-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-fwd-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-fwd-right {
+    0% {
+        -webkit-transform: translateZ(0) translateX(0) scale(0.8);
+        transform: translateZ(0) translateX(0) scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: translateZ(160px) translateX(100px) scale(1);
+        transform: translateZ(160px) translateX(100px) scale(1);
+    }
+}
+
+@keyframes slide-fwd-right {
+    0% {
+        -webkit-transform: translateZ(0) translateX(0) scale(0.8);
+        transform: translateZ(0) translateX(0) scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: translateZ(160px) translateX(100px) scale(1);
+        transform: translateZ(160px) translateX(100px) scale(1);
+    }
+}
+
+.slide-fwd-bottom {
+    -webkit-animation: slide-fwd-bottom 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-fwd-bottom 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-fwd-bottom {
+    0% {
+        -webkit-transform: translateZ(0) translateY(0) scale(0.8);
+        transform: translateZ(0) translateY(0) scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: translateZ(160px) translateY(100px) scale(1);
+        transform: translateZ(160px) translateY(100px) scale(1);
+    }
+}
+
+@keyframes slide-fwd-bottom {
+    0% {
+        -webkit-transform: translateZ(0) translateY(0) scale(0.8);
+        transform: translateZ(0) translateY(0) scale(0.8);
+    }
+
+    100% {
+        -webkit-transform: translateZ(160px) translateY(100px) scale(1);
+        transform: translateZ(160px) translateY(100px) scale(1);
+    }
+}
+</code>
 
 #### Code review met Lisa
 Uit de code review kwam vooral dat ik soms mijn naamgeving wel wat er beter kan doen, niet alleen gebruik ik niet vaak kebab-case voor mijn classes en ids, maar zijn niet alle namen allemaal even duidelijk. In mijn HTML en mijn CSS. In mijn JavaScript specifiek moet ik even consistent worden in wanneer ik wel of niet een ; ga doen.
+
+#### Checkout met Dylan
+Ik werd vandaag weer gekoppeld met Dylan, de persoon die naast me zit. Ik heb hier dus niet heel veel specifiek uit de checkout kunnen halen omdat we vaak toch al een beetje bij elkaar keken van hoe en wat de andere persoon aan het doen is. Zo had ik gedurende de dag zijn hulp bij het regelen van mijn fonts en het testen van mijn darkmode. Voor de rest van vandaag ga ik nog bronnen toevoegen aan mijn code en ga ik mijn readme afschrijven.
 
 #### Bekeken websites
 https://blog.logrocket.com/animating-dialog-popover-elements-css-starting-style/
 https://cssgradient.io/
 
 ### Donderdag 12 februari
-Vandaag om 10.00 is de deadline
+Vandaag om 10.00 is de deadline en hebben we een markt met alle websites
 
-### Vrijdag 13 februari
-Vrij
+### Week 2 verslag
+De eerste dag van de tweede week was ik thuis gebleven omdat ik me niet zo lekker voelde, maar heb ik wel nog een beetje door kunnen werken aan mijn opdracht. Zo ben ik verder gegaan met de API, hier had ik wel wat hulp van ChatGPT bij gebruikt. Ik had namelijk problemen met het inladen van de juiste informatie voor op de juiste locatie in de pop-up. Ik had nog 2 knoppen van mijn controller over waar ik nog geen functie voor had, dus had ik besloten dat ik ze allebei zou gebruiken voor de extra eis van deze week. Dat je met de 1 een id naar beneden zou gaan en met de 2 een id omhoog. Dit was alleen wat lastiger dan verwacht dus ook hier heb ik ChatGPT om hulp gevraagd. Daarna kwam ik er wel goed uit. deze week heb ik ook iets geleerd over een onderdeel wat ik later niet eens heb gebruikt in mijn eindproduct. Ik probeerde namelijk een extra dingetje voor de leuk toe te voegen dat als je op de Home Button klikt op de controller dat dan elke toets en element zou vallen in je scherm, maar nog steeds functioneel waren. Het duurde lang om te kijken hoe dit moest, maar uiteindelijk heb ik het geprobeerd met matter.js. Dit is een javascript script dat je kan inladen zodat je hem voor je website kan gebruiken< Het heeft heel veel mogelijkheden, maar het zou nu iets te laat zijn om het werkend te maken. Hier had ik dan eerder mee moeten beginnen, want nu had ik er geen tijd meer voor. Maar ik kan dit zeker later voor een andere website nog zeker wel eens gebruiken. Later heb ik van de home knop een extra animatie toegevoegd, en deze had ik 100% zelf gemaakt met CSS. Dus ook zonder voorbeeld van animista. Het was een simpele animatie, maar ben zeer tevreden over hoe hij eruit is komen te zien. Ik had nog een sound effect toegevoegd voor een beetje extra sfeer. <br>
+Deze week had ik ook nog een workshop over typografie. Dit was niet per se allemaal nieuwe informatie, maar het was wel handig om de basisregels even een beetje door te nemen over hoeveel tekens op een regel en waar je op moet letten bij het uitzoeken van een goed leesbaar lettertype. <br>
+De laatste woensdag was een kwestie van puntjes op de i, ik had nog een paar kleine ideetjes voor dingen waar ik iets mee zou willen. Zo heb ik de fav_color van medestudenten nog gebruikt voor mijn lampje op de controller, heb ik toegevoegd dat je met 1,2,3 en 4 het lampje kan verplaatsen. Heb ik veranderd hoe ik mijn font inlaad omdat ik tijdens de workshop had geleerd dat mijn huidige manier van importeren eigenlijk niet goed is. En heb ik toch nog even gekeken naar de animatie van de pop-ups. Deze had ik namelijk een tijdje uitstaan omdat het lastig was om het responsive te maken met mijn oude code. Maar aangezien ik voor mijn leerdoel met animaties wilde werken, keek ik er toch nog even naar. Sanna had me een website verteld waar ik goed met popover pop-ups animaties kon maken. Dit hielp veel en ik kwam ook wel ver, maar voor het laatste beetje had ik toch nog even Sanne om hulp gevraagd. Hij had nog uitleg gegeven over hoe je met transform properties zoals translate, rotate en scale, je niet per se eerst transform hoeft neer te zetten. Dit kan helpen om mijn wat meer overzicht te geven in mijn CSS. Maar het was uiteindelijk wel nog gelukt om de animaties werkend te krijgen, daar ben ik zeer tevreden mee. Voor de rest was het handig om een website te hebben waar alle standaard code conventions op staan, die kan ik meenemen naar volgende projecten zodat ik niet achteraf alles nog hoef te checken.

@@ -41,17 +41,12 @@
     --wii-button-shadow: drop-shadow(0 2px 0px var(--wii-button-border-color-shadow));
     --wii-font: 'Jost', sans-serif;
 
-/*     @media (prefers-color-scheme:dark) {
-        --wii-color: #2c3033;
-        --wii-color-text: #ffffff;
-        --wii-button-border-color-shadow: #1e1e1e;
-    } */
 }
 
 body {
-    background: var(--background);
     width: 100vw;
     height: 100vh;
+    background: var(--background);
 }
 
 body.dark-mode {
@@ -83,17 +78,16 @@ main {
 
 /* Wii dimensions: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHNw2Ip8d8CU5oWvMjqvJO2AsS2SEM0ilbTA&s */
 #wii {
-    background-color: var(--wii-color);
-    color: var(--wii-color-text);
     width: var(--wii-controller-width);
     height: var(--wii-controller-height);
     border-radius: 10px;
-    position: relative;
+    background-color: var(--wii-color);
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: var(--wii-color-text);
+    position: relative;
     font-family: var(--wii-font);
-
     transition: transform 0.4s ease;
 
     @media (width > 40em) and (height > 55em) {
@@ -137,10 +131,10 @@ main {
 /* D-Pad */
 /*********/
 #wii-direction-buttons {
+    margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    margin-top: 40px;
 
     button:nth-of-type(1) {
         grid-area: 1 / 2;
@@ -193,6 +187,8 @@ main {
 
 /* Pressed states using group classes */
 /* Selectors opgezet door ChatGPT, properties zelf ingevuld */
+/* Na meerdere prompts wilde het pas werken, maar de oorspronkelijk prompt was
+Give me a clean way to make sure that when 1 of the buttons of the dpad gets pressed. I can style the other buttons separately. You can use HTML CSS and JS */
 /* Top Button */
 #wii-direction-buttons.top-pressed #button-top {transform: rotateX(22.5deg);}
 #wii-direction-buttons.top-pressed #button-left {filter: drop-shadow(0 4px 0 var(--wii-button-border-color-shadow)); transform: rotateX(22.5deg); margin-top: -2px;}
@@ -389,7 +385,6 @@ main {
     filter: drop-shadow(0px 0px 3px var(--wii-controller-light));
 }
 
-
 /************/
 /* Wii Text */
 /************/
@@ -460,133 +455,6 @@ article[popover] {
         word-break: break-all;
     }
 }
-
-
-
-/*********************/
-/* Pop-up Animations */
-/*********************/
-
-
-/* Code found on Animista.com */
-/* 
-Oude code die werkte voor oude manier van pop-ups, werkten niet meer sinds attribuut popover
-
-.slide-fwd-top {
-    -webkit-animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-fwd-top 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes slide-fwd-top {
-    0% {
-        -webkit-transform: translateZ(0) translateY(0) scale(0.8);
-        transform: translateZ(0) translateY(0) scale(0.8);
-    }
-
-    100% {
-        -webkit-transform: translateZ(160px) translateY(-100px) scale(1);
-        transform: translateZ(160px) translateY(-100px) scale(1);
-    }
-}
-
-@keyframes slide-fwd-top {
-    0% {
-        -webkit-transform: translateZ(0) translateY(0) scale(0.8);
-        transform: translateZ(0) translateY(0) scale(0.8);
-    }
-
-    100% {
-        -webkit-transform: translateZ(160px) translateY(-100px) scale(1);
-        transform: translateZ(160px) translateY(-100px) scale(1);
-    }
-}
-
-.slide-fwd-left {
-    -webkit-animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-fwd-left 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes slide-fwd-left {
-    0% {
-        -webkit-transform: translateZ(0) translateX(0) scale(0.8);
-        transform: translateZ(0) translateX(0) scale(0.8);
-    }
-
-    100% {
-        -webkit-transform: translateZ(160px) translateX(-100px) scale(1);
-        transform: translateZ(160px) translateX(-100px) scale(1);
-    }
-}
-
-@keyframes slide-fwd-left {
-    0% {
-        -webkit-transform: translateZ(0) translateX(0) scale(0.8);
-        transform: translateZ(0) translateX(0) scale(0.8);
-    }
-
-    100% {
-        -webkit-transform: translateZ(160px) translateX(-100px) scale(1);
-        transform: translateZ(160px) translateX(-100px) scale(1);
-    }
-}
-
-.slide-fwd-right {
-    -webkit-animation: slide-fwd-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-fwd-right 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes slide-fwd-right {
-    0% {
-        -webkit-transform: translateZ(0) translateX(0) scale(0.8);
-        transform: translateZ(0) translateX(0) scale(0.8);
-    }
-
-    100% {
-        -webkit-transform: translateZ(160px) translateX(100px) scale(1);
-        transform: translateZ(160px) translateX(100px) scale(1);
-    }
-}
-
-@keyframes slide-fwd-right {
-    0% {
-        -webkit-transform: translateZ(0) translateX(0) scale(0.8);
-        transform: translateZ(0) translateX(0) scale(0.8);
-    }
-
-    100% {
-        -webkit-transform: translateZ(160px) translateX(100px) scale(1);
-        transform: translateZ(160px) translateX(100px) scale(1);
-    }
-}
-
-.slide-fwd-bottom {
-    -webkit-animation: slide-fwd-bottom 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    animation: slide-fwd-bottom 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@-webkit-keyframes slide-fwd-bottom {
-    0% {
-        -webkit-transform: translateZ(0) translateY(0) scale(0.8);
-        transform: translateZ(0) translateY(0) scale(0.8);
-    }
-
-    100% {
-        -webkit-transform: translateZ(160px) translateY(100px) scale(1);
-        transform: translateZ(160px) translateY(100px) scale(1);
-    }
-}
-
-@keyframes slide-fwd-bottom {
-    0% {
-        -webkit-transform: translateZ(0) translateY(0) scale(0.8);
-        transform: translateZ(0) translateY(0) scale(0.8);
-    }
-
-    100% {
-        -webkit-transform: translateZ(160px) translateY(100px) scale(1);
-        transform: translateZ(160px) translateY(100px) scale(1);
-    }
-} */
 
 /******************/
 /* Wii Animations */

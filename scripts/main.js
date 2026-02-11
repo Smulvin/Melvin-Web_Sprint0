@@ -1,8 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
   const API_BASE = "https://fdnd.directus.app/items/person/"
 
+  // Had hier hulp bij van ChatGPT, het kostte meerdere prompts voordat het wilde werken, dit gaat ook de pop-up scripts in de script.js:
+
+
+  // I have 2 different pop ups. One that shows only the information of id 310 (which is me). This was already 
+  // done with the original code I sent you. The other pop up should show a random other persons information which 
+  // is with an id between 279 and 325. So we should have new document.getElementById for the other people. The 
+  // following code already works for the first pop-up, we might need to change the url so that we can use the same 
+  // one for my pop up and the other persons popup 
+
+  //alright. the html is now set up correctly. Please add a console log for what id has been chosen for the other 
+  //person. Plus we should have references to those html ids so that we can fill them with the current information 
+  //from the database
+
+  //Something is still going wrong. I now at least see some of the content. But I am getting errors and my own pop up 
+  //is now different. On my own pop up it now only shows my favGame, instead of favoriteGames. And when clicking the 
+  //1 or 2 button is does correctly go randomly between different people. But I am getting the following error
+
+  // Great that worked. Now lets try to add a bit more. When the player presses the 1 or 2 button it should make the 
+  // pop up appear with a random id (this already works). But when the pop up is already active and the player presses 
+  // 1, the id that shows should be one lower than the active one. When the player presses 2 it should increase the 
+  // active id with 1. But only for popup5, not for my own popup with id 310 obviously
+
+  //Some of the ids give errors, so I wanted to skip them. I already added them to the while. But could you fix that 
+  //it actually skips them when cycling through?
+
+  //Alright now I would like to add some random ids to the mix. I want to add 69, 71, 72 and 228
+  //No i didnt mean to exclude them. The need to be part of the ids that you CAN see. So they somehow need to be part of the randomizer
+
+
   // ----------------------------
-  // POP-UP 1 — YOU (ID 310)
+  // POP-UP 1 — ME (ID 310)
   // ----------------------------
   loadYourProfile()
 
@@ -79,5 +108,4 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Fetch error (other):", err)
     }
   }
-
 })
