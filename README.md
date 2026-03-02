@@ -515,3 +515,6 @@ https://www.youtube.com/watch?v=P1gJJqYXpTc
 
 ### Fonts
 https://fonts.google.com/specimen/Jost
+
+## Latere aanpassingen
+Ik had als feedback gekregen dat ik 1 van mijn leerdoelen misschien beter kan aanpassen omdat het nu allemaal gefocust is op techniek. Tijdens de voorjaarsvakantie heb ik hier over nagedacht en had ik besloten dat ik mijn HTML meestal wel redelijk goed opgebouwd is, dus dat leerdoel ga ik veranderen naar iets anders. Mijn nieuwe leerdoel op die plek is: Ik wil meer schetsen en ideeën uitwerken op papier, zodat ik een beter beeld heb van het project voordat ik ga beginnen met coderen. Op deze manier kan ik alvast wat dingen uitzoeken, bedenken en feedback over krijgen voordat ik code ga schrijven. Dit kan veel helpen tijdens het productie proces.
